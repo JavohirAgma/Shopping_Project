@@ -4,6 +4,7 @@ import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;
 import lombok.NoArgsConstructor;
+import org.example.shoppingproject.enums.Category;
 
 @Data
 @AllArgsConstructor
@@ -14,5 +15,6 @@ public class Product {
     private String name;
     private String description;
     private Integer photoId;
-    private boolean condition;
+    private boolean isOpen;
+    private Category category;
 }
