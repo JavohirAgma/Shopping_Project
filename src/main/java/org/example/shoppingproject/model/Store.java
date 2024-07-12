@@ -14,5 +14,5 @@ public class Store {
     private String name;
     private Integer photoId;
     private Integer ownerId;
-    private boolean condition;
+    private boolean isOpen;
 }

@@ -13,11 +13,12 @@ import java.util.List;
 @NoArgsConstructor
 @Builder
 public class User {
+    private boolean isActive;
     private Integer id;
     private String name;
+    private String userName;
     private String password;
     private String email;
     private String phone;
-    private List<UserRole> orders;
-    private boolean condition;
+    private List<UserRole> role;
 }
