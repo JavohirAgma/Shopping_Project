@@ -122,7 +122,6 @@
     </style>
 </head>
 <body>
-
 <header>
     <div class="logo">ShopLogo</div>
     <nav>
@@ -131,7 +130,7 @@
             <li><a href="#shop">Shop</a></li>
             <li><a href="#about">About</a></li>
             <li><a href="#contact">Contact</a></li>
-            <li><a href="/login">Sign</a></li>
+            <li><a href="/login">Contact</a></li>
         </ul>
     </nav>
 </header>
@@ -150,8 +149,26 @@
             <h3>Product 1</h3>
             <p>$19.99</p>
         </div>
+        <div class="product-item">
+            <img src="product2.jpg" alt="Product 2">
+            <h3>Product 2</h3>
+            <p>$29.99</p>
+        </div>
+        <div class="product-item">
+            <img src="product3.jpg" alt="Product 3">
+            <h3>Product 3</h3>
+            <p>$39.99</p>
+        </div>
+        <div class="product-item">
+            <img src="product4.jpg" alt="Product 4">
+            <h3>Product 4</h3>
+            <p>$49.99</p>
+        </div>
     </div>
 </section>
 
+<footer>
+    <p>&copy; 2024 ShopLogo. All rights reserved.</p>
+</footer>
 </body>
 </html>
