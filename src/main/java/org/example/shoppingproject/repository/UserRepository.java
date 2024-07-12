@@ -16,7 +16,7 @@ public class UserRepository implements BaseRepository<User>{
                 Connection connection = DbConnection.getConnection();
                 Statement statement = connection.createStatement();
         ){
-            String query = "insert into users(name,gmail,password,username,phone_number,is_active) values('%s','%s','%s','%s','%s','%s',%s) returning id;"
+            String query = "insert into users(name,gmail,password,username,phone_number,is_active) values('%s','%s','%s','%s','%s',%s) returning id;"
                     .formatted(user.getName(),user.getEmail(),user.getPassword(),user.getUserName(),user.getPhone(),user.getIsActive());
             ResultSet rs = statement.executeQuery(query);
             while (rs.next()){
