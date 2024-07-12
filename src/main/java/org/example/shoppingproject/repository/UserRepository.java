@@ -16,8 +16,8 @@ public class UserRepository implements BaseRepository<User>{
                 Connection connection = DbConnection.getConnection();
                 Statement statement = connection.createStatement();
         ){
-            String query = "insert into users(name,gmail,password,username,phone_number) values('%s','%s','%s','%s','%s','%s',%s) returning id;"
-                    .formatted(user.getName(),user.getEmail(),user.getPassword(),user.getUserName(),user.getPhone());
+            String query = "insert into users(name,gmail,password,username,phone_number,is_active) values('%s','%s','%s','%s','%s','%s',%s) returning id;"
+                    .formatted(user.getName(),user.getEmail(),user.getPassword(),user.getUserName(),user.getPhone(),user.getIsActive());
             ResultSet rs = statement.executeQuery(query);
             while (rs.next()){
                 int id = rs.getInt("id");
@@ -46,9 +46,18 @@ public class UserRepository implements BaseRepository<User>{
                 String username = rs.getString("username");
                 String password = rs.getString("password");
                 String phoneNumber = rs.getString("phone_number");
-                boolean isActive = rs.getBoolean("is_active");
-                User user = new User();
-                return user;}
+                Boolean isActive = rs.getBoolean("is_active");
+                User build = User.builder()
+                        .id(id1)
+                        .name(name)
+                        .password(password)
+                        .isActive(isActive)
+                        .phone(phoneNumber)
+                        .email(email)
+                        .userName(username)
+                        .build();
+                return build;
+            }
 
         } catch (SQLException e) {
             throw new RuntimeException(e);

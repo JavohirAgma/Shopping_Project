@@ -25,14 +25,10 @@ public class LoginServlet extends HttpServlet {
         String password = req.getParameter("password");
         User login = userService.login(username, password);
 
-        if (login!=null) {
             HttpSession session = req.getSession();
             session.setAttribute("userId",login.getId());
-            resp.sendRedirect("/profile");
+            resp.sendRedirect("/login.jsp");
 
-        }else {
-            resp.sendRedirect("/login");
-        }
     }
 
     @Override

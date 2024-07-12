@@ -8,12 +8,12 @@ import org.example.shoppingproject.enums.UserRole;
 
 import java.util.List;
 
+
 @Data
-@AllArgsConstructor
 @NoArgsConstructor
+@AllArgsConstructor
 @Builder
 public class User {
-    private boolean isActive;
     private Integer id;
     private String name;
     private String userName;
@@ -21,4 +21,5 @@ public class User {
     private String email;
     private String phone;
     private List<UserRole> role;
+    private Boolean isActive;
 }

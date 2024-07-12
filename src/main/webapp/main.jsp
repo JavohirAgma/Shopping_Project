@@ -130,7 +130,7 @@
             <li><a href="#shop">Shop</a></li>
             <li><a href="#about">About</a></li>
             <li><a href="#contact">Contact</a></li>
-            <li><a href="#sign">Sign</a></li>
+            <li><a href="/login.jsp">Sign</a></li>
         </ul>
     </nav>
 </header>
