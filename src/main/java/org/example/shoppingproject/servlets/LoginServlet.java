@@ -33,10 +33,10 @@ public class LoginServlet extends HttpServlet {
 
     @Override
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-        System.out.println("login "+req.getMethod());
         String today = LocalDate.now().toString();
         req.setAttribute("today",today);
         RequestDispatcher requestDispatcher = req.getRequestDispatcher("/login.jsp");
         requestDispatcher.forward(req,resp);
+
     }
 }

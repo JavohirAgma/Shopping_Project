@@ -24,18 +24,20 @@ public class SignUpServlet extends HttpServlet {
 
     @Override
     protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-        int id1 = Integer.parseInt(req.getParameter("id"));
+        Integer id1 = Integer.valueOf(req.getParameter("id"));
         String name = req.getParameter("name");
         String email = req.getParameter("email");
         String username = req.getParameter("username");
         String password = req.getParameter("password");
         String phoneNumber = req.getParameter("phone_number");
-        Boolean isActive = Boolean.valueOf(req.getParameter("is_active"));
+        String consumer = req.getParameter("CONSUMER");
+        String user = req.getParameter("USER");
+
         User build = User.builder()
                 .id(id1)
                 .name(name)
                 .password(password)
-                .isActive(isActive)
+                .isActive(true)
                 .phone(phoneNumber)
                 .email(email)
                 .userName(username)

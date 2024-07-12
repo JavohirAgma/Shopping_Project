@@ -80,6 +80,29 @@ public class UserRepository implements BaseRepository<User>{
                 Connection connection = DbConnection.getConnection();
                 Statement statement = connection.createStatement();
         ){
+            String query = "select * from users where username = '%s' and password = '%s' limit 1"
+                    .formatted(username,password);
+            ResultSet rs = statement.executeQuery(query);
+
+            while (rs.next()){
+                int id1 = rs.getInt("id");
+                String name = rs.getString("name");
+                String email = rs.getString("email");
+                String username2 = rs.getString("username");
+                String password2= rs.getString("password");
+                String phoneNumber = rs.getString("phone_number");
+                Boolean isActive = rs.getBoolean("is_active");
+                User user = User.builder()
+                        .id(id1)
+                        .name(name)
+                        .password(password2)
+                        .isActive(isActive)
+                        .phone(phoneNumber)
+                        .email(email)
+                        .userName(username2)
+                        .build();
+                return user;
+            }
 
         } catch (SQLException e) {
             throw new RuntimeException(e);
