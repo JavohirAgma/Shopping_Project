@@ -5,5 +5,5 @@ public class Store {
     private String name;
     private Integer photoId;
     private Integer ownerId;
-    private Condition conditionId;
+    private boolean condition;
 }
