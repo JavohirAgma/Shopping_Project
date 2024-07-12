@@ -122,6 +122,7 @@
     </style>
 </head>
 <body>
+
 <header>
     <div class="logo">ShopLogo</div>
     <nav>
@@ -130,7 +131,7 @@
             <li><a href="#shop">Shop</a></li>
             <li><a href="#about">About</a></li>
             <li><a href="#contact">Contact</a></li>
-            <li><a href="/login.jsp">Sign</a></li>
+            <li><a href="/login">Sign</a></li>
         </ul>
     </nav>
 </header>
@@ -152,8 +153,5 @@
     </div>
 </section>
 
-<footer>
-    <p>&copy; 2024 ShopLogo. All rights reserved.</p>
-</footer>
 </body>
 </html>

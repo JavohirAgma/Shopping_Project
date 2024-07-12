@@ -2,7 +2,7 @@
   Created by IntelliJ IDEA.
   User: bobur
   Date: 02.07.2024
-  Time: 17:03
+  Time: 15:49
   To change this template use File | Settings | File Templates.
 --%>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
@@ -11,7 +11,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Login Page</title>
+    <title>Signup Page</title>
+
     <style>
         body {
             font-family: Arial, sans-serif;
@@ -23,14 +24,14 @@
             background-color: #f4f4f4;
         }
 
-        .login-container {
+        .signup-container {
             background-color: white;
             padding: 20px;
             border-radius: 8px;
             box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
         }
 
-        .login-container h2 {
+        .signup-container h2 {
             margin-bottom: 20px;
             color: #333;
         }
@@ -67,42 +68,39 @@
             background-color: #0056b3;
         }
 
-        .links {
-            margin-top: 15px;
-            text-align: center;
-        }
-
-        .links a {
-            color: #007bff;
-            text-decoration: none;
-        }
-
-        .links a:hover {
-            text-decoration: underline;
-        }
-
-
     </style>
 </head>
 <body>
-<%String today = (String) request.getAttribute("today");%>
-
-<div class="login-container">
-    <h2>Login <%=today%></h2>
-    <form action="/login" method="POST">
+<div class="signup-container">
+    <h2>Signup</h2>
+    <form action="/signup" method="POST">
+        <div class="form-group">
+            <label for="name">Firstname:</label>
+            <input type="text" id="name" name="name" required>
+        </div>
         <div class="form-group">
             <label for="username">Username:</label>
             <input type="text" id="username" name="username" required>
         </div>
         <div class="form-group">
+            <label for="email">Email:</label>
+            <input type="email" id="email" name="email" required>
+        </div>
+        <div class="form-group">
             <label for="password">Password:</label>
             <input type="password" id="password" name="password" required>
         </div>
-        <button type="submit">Login</button>
+        <div class="form-group">
+            <label for="phoneNumber">Phone number:</label>
+            <input type="number" id="phoneNumber" name="phoneNumber" required>
+        </div>
+            <input type="checkbox" id="COMSUMER" name="CONSUMER">
+            <label for="COMSUMER">Seller Logo</label><br>
+            <input type="checkbox" id="USER" name="USER">
+            <label for="USER">User Logo</label><br>
+
+        <button type="submit">Signup</button>
     </form>
-    <div class="links">
-        <a href="/signup">Don't have an account? Sign Up</a>
-    </div>
 </div>
 </body>
 </html>

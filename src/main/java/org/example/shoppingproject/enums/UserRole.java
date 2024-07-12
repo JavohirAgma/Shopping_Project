@@ -3,9 +3,9 @@ package org.example.shoppingproject.enums;
 import java.util.StringJoiner;
 
 public enum UserRole {
-    ADMIN,
     USER,
-    Consumer;
+    CONSUMER,
+    ADMIN;
     public static String show() {
         StringJoiner joiner = new StringJoiner("\n");
         UserRole[] values = values();
@@ -15,7 +15,7 @@ public enum UserRole {
         return joiner.toString();
     }
     public static UserRole getCategoryByOrdinal(Integer ordinal) {
-        for (UserRole value : values()) {
+        for (UserRole value : values() ) {
             if (value.ordinal()==ordinal-1)
                 return value;
         }
