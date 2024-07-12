@@ -6,10 +6,13 @@ import jakarta.servlet.annotation.WebServlet;
 import jakarta.servlet.http.HttpServlet;
 import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
+import org.example.shoppingproject.enums.UserRole;
 import org.example.shoppingproject.model.User;
 import org.example.shoppingproject.service.UserService;
 
 import java.io.IOException;
+import java.util.ArrayList;
+import java.util.List;
 
 @WebServlet(name = "signup", value = "/signup")
 public class SignUpServlet extends HttpServlet {
@@ -24,23 +27,22 @@ public class SignUpServlet extends HttpServlet {
 
     @Override
     protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-        Integer id1 = Integer.valueOf(req.getParameter("id"));
         String name = req.getParameter("name");
         String email = req.getParameter("email");
         String username = req.getParameter("username");
         String password = req.getParameter("password");
         String phoneNumber = req.getParameter("phone_number");
-        String consumer = req.getParameter("CONSUMER");
-        String user = req.getParameter("USER");
-
+        UserRole category = UserRole.getCategoryByOrdinal(1);
+        List<UserRole> userRoles = new ArrayList<UserRole>();
+        userRoles.add(category);
         User build = User.builder()
-                .id(id1)
                 .name(name)
                 .password(password)
                 .isActive(true)
                 .phone(phoneNumber)
                 .email(email)
                 .userName(username)
+                .role(userRoles)
                 .build();
         userService.signUp(build);
         resp.sendRedirect("/login");

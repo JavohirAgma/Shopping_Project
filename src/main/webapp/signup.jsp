@@ -92,13 +92,8 @@
         </div>
         <div class="form-group">
             <label for="phoneNumber">Phone number:</label>
-            <input type="number" id="phoneNumber" name="phoneNumber" required>
+            <input type="text" id="phoneNumber" name="phoneNumber" required>
         </div>
-            <input type="checkbox" id="COMSUMER" name="CONSUMER">
-            <label for="COMSUMER">Seller Logo</label><br>
-            <input type="checkbox" id="USER" name="USER">
-            <label for="USER">User Logo</label><br>
-
         <button type="submit">Signup</button>
     </form>
 </div>
