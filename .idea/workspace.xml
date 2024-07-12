@@ -9,11 +9,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="634c8ec2-e0fd-4684-8552-6c024b986986" name="Changes" comment="*">
-      <change afterPath="$PROJECT_DIR$/src/main/java/org/example/shoppingproject/utils/FileWriterUtil.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/docs/product1.jpg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-    </list>
+    <list default="true" id="634c8ec2-e0fd-4684-8552-6c024b986986" name="Changes" comment="*" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -209,6 +205,7 @@
       <workItem from="1720798214132" duration="20000" />
       <workItem from="1720798271163" duration="330000" />
       <workItem from="1720798621064" duration="45000" />
+      <workItem from="1720798762070" duration="30000" />
     </task>
     <task id="LOCAL-00001" summary="birinchisi">
       <option name="closed" value="true" />
@@ -250,7 +247,15 @@
       <option name="project" value="LOCAL" />
       <updated>1720798437291</updated>
     </task>
-    <option name="localTasksCounter" value="6" />
+    <task id="LOCAL-00006" summary="*">
+      <option name="closed" value="true" />
+      <created>1720798767056</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1720798767056</updated>
+    </task>
+    <option name="localTasksCounter" value="7" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
