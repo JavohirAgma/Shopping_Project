@@ -12,6 +12,9 @@
     <list default="true" id="634c8ec2-e0fd-4684-8552-6c024b986986" name="Changes" comment="*">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/org/example/shoppingproject/config/DbConnection.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/shoppingproject/config/DbConnection.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/shoppingproject/service/UserService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/shoppingproject/service/UserService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/scheme.sql" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/scheme.sql" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/notCongrats.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/notCongrats.jsp" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -233,8 +236,6 @@
       <workItem from="1720842902773" duration="139000" />
       <workItem from="1720843105514" duration="2096000" />
       <workItem from="1720846439031" duration="1069000" />
-      <workItem from="1720860024294" duration="5704000" />
-      <workItem from="1720866834873" duration="738000" />
     </task>
     <task id="LOCAL-00001" summary="birinchisi">
       <option name="closed" value="true" />
@@ -380,39 +381,7 @@
       <option name="project" value="LOCAL" />
       <updated>1720847502735</updated>
     </task>
-    <task id="LOCAL-00019" summary="*">
-      <option name="closed" value="true" />
-      <created>1720859046924</created>
-      <option name="number" value="00019" />
-      <option name="presentableId" value="LOCAL-00019" />
-      <option name="project" value="LOCAL" />
-      <updated>1720859046925</updated>
-    </task>
-    <task id="LOCAL-00020" summary="*">
-      <option name="closed" value="true" />
-      <created>1720859731600</created>
-      <option name="number" value="00020" />
-      <option name="presentableId" value="LOCAL-00020" />
-      <option name="project" value="LOCAL" />
-      <updated>1720859731600</updated>
-    </task>
-    <task id="LOCAL-00021" summary="*">
-      <option name="closed" value="true" />
-      <created>1720865914783</created>
-      <option name="number" value="00021" />
-      <option name="presentableId" value="LOCAL-00021" />
-      <option name="project" value="LOCAL" />
-      <updated>1720865914783</updated>
-    </task>
-    <task id="LOCAL-00022" summary="*">
-      <option name="closed" value="true" />
-      <created>1720866841428</created>
-      <option name="number" value="00022" />
-      <option name="presentableId" value="LOCAL-00022" />
-      <option name="project" value="LOCAL" />
-      <updated>1720866841428</updated>
-    </task>
-    <option name="localTasksCounter" value="23" />
+    <option name="localTasksCounter" value="19" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
