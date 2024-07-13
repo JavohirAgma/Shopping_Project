@@ -76,9 +76,9 @@
             width: 100%;
         }
 
-        h1 {
+        h4 {
             color: #333;
-            font-size: 3em;
+            font-size: 2em;
             margin-bottom: 10px;
         }
 
@@ -134,7 +134,7 @@
 
 <div class="content">
     <div class="congratulations">
-        <h1>Congratulations!</h1>
+        <h4>Congratulations!</h4>
         <p>You signed up successfully</p>
         <form action="/main" method="post">
             <button type="submit">Back</button>
