@@ -21,9 +21,9 @@ public class UserRepository implements BaseRepository<User>{
             String query = "insert into users(name,gmail,password,username,phone_number,is_active) values('%s','%s','%s','%s','%s',%s) returning id;"
                     .formatted(user.getName(),user.getEmail(),user.getPassword(),user.getUserName(),user.getPhone(),user.getIsActive());
             ResultSet rs = statement.executeQuery(query);
-            setRole(user.getId(),1);
             while (rs.next()){
                 int id = rs.getInt("id");
+                setRoleUser(id);
                 return id;
             }
             return null;
@@ -53,13 +53,8 @@ public class UserRepository implements BaseRepository<User>{
                 List<Integer> role = getRole(id1);
                 List<UserRole> role2= new ArrayList<>();
                 for (Integer i : role) {
-                    if(i==1){
-                        role2.add(UserRole.USER);
-                    }else if(i==2){
-                        role2.add(UserRole.CONSUMER);
-                    } else if (i==3) {
-                        role2.add(UserRole.ADMIN);
-                    }
+                    UserRole category = UserRole.getCategoryByOrdinal(i);
+                    role2.add(category);
                 }
                 User build = User.builder()
                         .id(id1)
@@ -167,6 +162,18 @@ public class UserRepository implements BaseRepository<User>{
                 Statement statement = connection.createStatement();
         ){
             String query = "insert into connection_role(user_id,role_id) values(%s,%s)" .formatted(user_id,role_id);
+            statement.execute(query);
+            return true;
+        } catch (SQLException e) {
+            throw new RuntimeException(e);
+        }
+    }
+    public boolean setRoleUser(Integer user_id) {
+        try (
+                Connection connection = DbConnection.getConnection();
+                Statement statement = connection.createStatement();
+        ){
+            String query = "insert into connection_role(user_id,role_id) values(%s,1)" .formatted(user_id);
             statement.execute(query);
             return true;
         } catch (SQLException e) {

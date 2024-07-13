@@ -35,7 +35,7 @@ public class SignUpServlet extends HttpServlet {
         UserRole category = UserRole.USER;
         List<UserRole> userRoles = new ArrayList<>();
         userRoles.add(category);
-        System.out.println(userRoles);
+
         User build = User.builder()
                 .name(name)
                 .password(password)

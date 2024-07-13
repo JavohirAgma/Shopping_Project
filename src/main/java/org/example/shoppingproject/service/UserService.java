@@ -25,7 +25,7 @@ public class UserService {
                 return false;
             }
         }
-            userRepository.save(user);
+        userRepository.save(user);
         return true;
     }
     public User login(String  username, String password){

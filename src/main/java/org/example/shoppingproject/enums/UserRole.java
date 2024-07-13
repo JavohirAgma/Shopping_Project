@@ -21,4 +21,11 @@ public enum UserRole {
         }
         return null;
     }
+    public static Integer getOrdinalBYCategory(UserRole value) {
+        for (UserRole value1 : values() ) {
+            if (value1.equals(value))
+                return value1.ordinal()+1;
+        }
+        return null;
+    }
 }
