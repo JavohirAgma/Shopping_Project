@@ -87,7 +87,7 @@ public class UserRepository implements BaseRepository<User>{
             while (rs.next()){
                 int id1 = rs.getInt("id");
                 String name = rs.getString("name");
-                String email = rs.getString("email");
+                String email = rs.getString("gmail");
                 String username2 = rs.getString("username");
                 String password2= rs.getString("password");
                 String phoneNumber = rs.getString("phone_number");
