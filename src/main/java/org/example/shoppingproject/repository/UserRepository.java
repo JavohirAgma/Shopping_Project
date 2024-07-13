@@ -1,6 +1,7 @@
 package org.example.shoppingproject.repository;
 
 import org.example.shoppingproject.config.DbConnection;
+import org.example.shoppingproject.enums.UserRole;
 import org.example.shoppingproject.model.User;
 
 import java.sql.Connection;
@@ -93,6 +94,12 @@ public class UserRepository implements BaseRepository<User>{
                 String password2= rs.getString("password");
                 String phoneNumber = rs.getString("phone_number");
                 Boolean isActive = rs.getBoolean("is_active");
+                List<Integer> role = getRole(id1);
+                List<UserRole> roles = new ArrayList<>();
+                for (Integer i : role) {
+                    UserRole categoryByOrdinal = UserRole.getCategoryByOrdinal(i);
+                    roles.add(categoryByOrdinal);
+                }
                 User user = User.builder()
                         .id(id1)
                         .name(name)
@@ -100,6 +107,7 @@ public class UserRepository implements BaseRepository<User>{
                         .isActive(isActive)
                         .phone(phoneNumber)
                         .email(email)
+                        .role(roles)
                         .userName(username2)
                         .build();
                 return user;
@@ -138,4 +146,24 @@ public class UserRepository implements BaseRepository<User>{
         }
         return users;
     }
+    public List<Integer> getRole(Integer id) {
+        List<Integer> roles = new ArrayList<>();
+        try (
+                Connection connection = DbConnection.getConnection();
+                Statement statement = connection.createStatement();
+        ){
+            String query = "select role_id from connection_role where user_id = %s;" .formatted(id);
+            ResultSet rs = statement.executeQuery(query);
+            while (rs.next()){
+                int roleId = rs.getInt("role_id");
+                roles.add(roleId);
+            }
+
+            return roles;
+        } catch (SQLException e) {
+            throw new RuntimeException(e);
+        }
+    }
+
+
 }

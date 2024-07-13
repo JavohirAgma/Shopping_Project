@@ -33,7 +33,7 @@ public class SignUpServlet extends HttpServlet {
         String password = req.getParameter("password");
         String phoneNumber = req.getParameter("phone_number");
         UserRole category = UserRole.getCategoryByOrdinal(1);
-        List<UserRole> userRoles = new ArrayList<UserRole>();
+        List<UserRole> userRoles = new ArrayList<>();
         userRoles.add(category);
         User build = User.builder()
                 .name(name)

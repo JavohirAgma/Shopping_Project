@@ -140,7 +140,7 @@
             <%if(id==null){%>
             <li><a href="/login">LogIn</a></li>
             <%}else{%>
-            <li><a href="/logOut">LogOut</a></li>
+            <li><a href="/profile">Profile</a></li>
             <%}%>
         </ul>
     </nav>
