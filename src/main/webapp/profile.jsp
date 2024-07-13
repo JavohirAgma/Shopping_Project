@@ -140,11 +140,12 @@
     </ul>
 </div>
 
-<% HttpSession userId = request.getSession();
- Integer id =(Integer) userId.getAttribute("userId");
+<%HttpSession session1 = request.getSession();
+ Integer id =(Integer) session1.getAttribute("userId");
  UserService userService= new UserService();
     User user = userService.get(id);
-    List<UserRole> role = user.getRole();%>
+    List<UserRole> role = user.getRole();
+%>
 
 <div class="content">
     <div class="profile-container">
@@ -161,7 +162,7 @@
             </li>
             <li>
                 <%for (UserRole userRole : role) {%>
-                <span>Status:</span> <span class="status"><%=userRole.toString()%></span>
+                <span>Status:</span> <span><%=userRole.toString()%></span>
                     <%}%>
             </li>
         </ul>
