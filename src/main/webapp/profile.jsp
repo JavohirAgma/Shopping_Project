@@ -132,10 +132,9 @@
 <body>
 <div class="sidebar">
     <ul>
-        <li><a href="#">Home</a></li>
-        <li><a href="#">Products</a></li>
+        <li><a href="/main.jsp">Home</a></li>
         <li><a href="#">Categories</a></li>
-        <li><a href="#">Orders</a></li>
+        <li><a href="/logOut">LogOut</a></li>
         <li><a href="#">Settings</a></li>
     </ul>
 </div>
