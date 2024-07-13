@@ -4,8 +4,8 @@ create table users(
                       id serial primary key,
                       name varchar,
                       gmail varchar not null unique ,
-                      password varchar not null unique ,
-                      username varchar not null unique ,
+                      password varchar not null  ,
+                      username varchar not null,
                       phone_number varchar not null ,
                       is_active boolean
 );

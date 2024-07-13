@@ -135,8 +135,8 @@
 <div class="content">
     <div class="Not_congratulations">
         <h4>Unfortunatily!</h4>
-        <p>Email,password,username and phone Number Already exists</p>
-        <form action="/signup" method="post">
+        <p>Email or phone Number Already exists</p>
+        <form action="/signup" method="get">
             <button type="submit">Back</button>
         </form>
     </div>

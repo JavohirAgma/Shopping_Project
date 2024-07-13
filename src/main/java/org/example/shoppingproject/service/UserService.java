@@ -16,15 +16,15 @@ public class UserService {
         List<User> allForCheck = userRepository.getAllForCheck();
         for (User user1 : allForCheck) {
             if (
-               user1.getUserName().equals(user.getUserName())
-            || user1.getPassword().equals(user.getPassword())
+                    user1.getUserName().equals(user.getUserName())
+           || user1.getPassword().equals(user.getPassword())
             || user1.getEmail().equals(user.getEmail())
-            || user1.getPhone().equals(user.getPhone())
+                    || user1.getPhone().equals(user.getPhone())
             ){
                 return false;
             }
         }
-        userRepository.save(user);
+            userRepository.save(user);
         return true;
     }
     public User login(String  username, String password){
