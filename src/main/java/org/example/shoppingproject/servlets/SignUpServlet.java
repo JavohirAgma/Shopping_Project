@@ -44,9 +44,14 @@ public class SignUpServlet extends HttpServlet {
                 .userName(username)
                 .role(userRoles)
                 .build();
-        userService.signUp(build);
-        RequestDispatcher requestDispatcher = req.getRequestDispatcher("/congrats.jsp");
-        requestDispatcher.forward(req,resp);
-        ;
+        boolean b = userService.signUp(build);
+        if (b){
+            RequestDispatcher requestDispatcher = req.getRequestDispatcher("/congrats.jsp");
+            requestDispatcher.forward(req,resp);
+        }else{
+            RequestDispatcher requestDispatcher = req.getRequestDispatcher("/notCongrats.jsp");
+            requestDispatcher.forward(req,resp);
+        }
+
     }
 }

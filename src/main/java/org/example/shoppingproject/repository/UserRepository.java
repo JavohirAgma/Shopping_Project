@@ -7,6 +7,7 @@ import java.sql.Connection;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
+import java.util.ArrayList;
 import java.util.List;
 
 public class UserRepository implements BaseRepository<User>{
@@ -108,5 +109,33 @@ public class UserRepository implements BaseRepository<User>{
             throw new RuntimeException(e);
         }
         return null;
+    }
+    public List<User> getAllForCheck() {
+        List<User> users = new ArrayList<>();
+        try (
+                Connection connection = DbConnection.getConnection();
+                Statement statement = connection.createStatement();
+        ){
+            String query = "select * from users ";
+            ResultSet rs = statement.executeQuery(query);
+            while (rs.next()){
+                String name = rs.getString("name");
+                String email = rs.getString("gmail");
+                String username2 = rs.getString("username");
+                String password2 = rs.getString("password");
+                String phoneNumber = rs.getString("phone_number");
+                User user = User.builder()
+                        .name(name)
+                        .email(email)
+                        .userName(username2)
+                        .password(password2)
+                        .phone(phoneNumber)
+                        .build();
+                users.add(user);
+            }
+        } catch (SQLException e) {
+            throw new RuntimeException(e);
+        }
+        return users;
     }
 }
