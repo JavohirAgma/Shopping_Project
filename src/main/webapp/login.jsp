@@ -118,6 +118,7 @@
 
     </style>
 </head>
+<%Integer id = (Integer) request.getSession().getAttribute("userId");%>
 <body>
 <header>
     <div class="logo">ShopLogo</div>
@@ -127,7 +128,6 @@
             <li><a href="#shop">Shop</a></li>
             <li><a href="#about">About</a></li>
             <li><a href="/login">LogIn</a></li>
-            <li><a href="/logOut">LogOut</a></li>
         </ul>
     </nav>
 </header>
