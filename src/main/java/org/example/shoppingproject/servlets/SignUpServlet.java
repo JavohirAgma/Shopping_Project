@@ -45,6 +45,8 @@ public class SignUpServlet extends HttpServlet {
                 .role(userRoles)
                 .build();
         userService.signUp(build);
-        resp.sendRedirect("/login");
+        RequestDispatcher requestDispatcher = req.getRequestDispatcher("/congrats.jsp");
+        requestDispatcher.forward(req,resp);
+        ;
     }
 }

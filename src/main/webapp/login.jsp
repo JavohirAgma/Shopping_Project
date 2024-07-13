@@ -95,7 +95,7 @@
         }
 
         button[type=submit]:hover {
-            background-color: #45a049;
+            background-color: #f00c;
         }
 
         .links {
@@ -117,7 +117,6 @@
             padding: 20px 60px;
             margin-top: 185px;
         }
-
     </style>
 </head>
 <body>

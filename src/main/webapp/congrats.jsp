@@ -10,11 +10,10 @@
 <head>
 </head>
 <body>
-<form action="/" method="post" >
+<form action="/main" method="post" >
     <div class="congratulations">
         <h1>Congratulations!</h1>
-        <p>Your todo has been saved successfully</p>
-        <p>Keep up the great work!</p>
+        <p>You sign upped successfully</p>
         <button type="submit">Back</button>
     </div>
 </form>
@@ -39,7 +38,7 @@
     }
 
     h1 {
-        color: #007bff;
+        color: #333;
         font-size: 3em;
         margin-bottom: 10px;
     }
@@ -52,7 +51,7 @@
     }
 
     button {
-        background-color: #007bff;
+        background-color: #f00;
         color: white;
         padding: 10px 20px;
         font-size: 1.2em;
@@ -63,7 +62,7 @@
     }
 
     button:hover {
-        background-color: #0056b3;
+        background-color: #f00b;
     }
 </style>
 
