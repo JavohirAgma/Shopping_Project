@@ -6,7 +6,7 @@ create table users(
                       gmail varchar not null unique ,
                       password varchar not null  ,
                       username varchar not null,
-                      phone_number varchar not null ,
+                      phone_number varchar not null unique ,
                       is_active boolean
 );
 
