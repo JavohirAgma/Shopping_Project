@@ -51,7 +51,6 @@
             text-decoration: underline;
         }
 
-        /* Login form styles */
         .login-container {
             max-width: 400px;
             margin: 20px auto;
@@ -59,6 +58,9 @@
             border: 1px solid #ccc;
             background-color: #f9f9f9;
             text-align: center;
+        }
+        .login-container{
+            margin-top: 160px;
         }
 
         .login-container h2 {
@@ -113,12 +115,11 @@
             color: #fff;
             text-align: center;
             padding: 20px 60px;
-            margin-top: 322px;
+            margin-top: 185px;
         }
 
     </style>
 </head>
-<%Integer id = (Integer) request.getSession().getAttribute("userId");%>
 <body>
 <header>
     <div class="logo">ShopLogo</div>
