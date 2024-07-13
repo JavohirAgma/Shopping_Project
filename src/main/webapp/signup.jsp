@@ -127,12 +127,46 @@
             padding: 20px 60px;
             margin-top: 50px;
         }
+        .search-container {
+            display: flex;
+            align-items: center;
+            width: 200px;
+            border: 1px solid #ccc;
+            border-radius: 1px;
+            overflow: hidden;
+        }
+
+        .search-input {
+            flex: 1;
+            padding: 5px;
+            border: none;
+            outline: none;
+            font-size: 10px;
+        }
+
+        .search-button {
+            background-color: #f0f0f0;
+            border: none;
+            padding: 1px;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
 
     </style>
 </head>
 <body>
 <header>
     <div class="logo">ShopLogo</div>
+    <div class="search-container">
+        <input type="text" class="search-input" placeholder="Search products">
+        <button class="search-button">
+            <i class="bi bi-search"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-search" viewBox="0 0 16 16">
+                <path d="M11.742 10.344a6.5 6.5 0 1 0-1.397 1.398h-.001q.044.06.098.115l3.85 3.85a1 1 0 0 0 1.415-1.414l-3.85-3.85a1 1 0 0 0-.115-.1zM12 6.5a5.5 5.5 0 1 1-11 0 5.5 5.5 0 0 1 11 0"/>
+            </svg></i>
+        </button>
+    </div>
     <nav>
         <ul>
             <li><a href="/main">Home</a></li>
@@ -164,8 +198,8 @@
                 <input type="password" id="password" name="password" required>
             </div>
             <div class="form-group">
-                <label for="phoneNumber">Phone number:</label>
-                <input type="text" id="phoneNumber" name="phoneNumber" required>
+                <label for="phone_number">Phone number:</label>
+                <input type="text" id="phone_number" name="phone_number" required>
             </div>
             <button type="submit">Signup</button>
         </form>

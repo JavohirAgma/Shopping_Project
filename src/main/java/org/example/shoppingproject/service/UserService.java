@@ -4,6 +4,7 @@ import org.example.shoppingproject.model.User;
 import org.example.shoppingproject.repository.UserRepository;
 
 import java.util.List;
+import java.util.Objects;
 
 public class UserService {
 
@@ -16,10 +17,10 @@ public class UserService {
         List<User> allForCheck = userRepository.getAllForCheck();
         for (User user1 : allForCheck) {
             if (
-                    user1.getUserName().equals(user.getUserName())
-           || user1.getPassword().equals(user.getPassword())
+             user1.getUserName().equals(user.getUserName())
+            || user1.getPassword().equals(user.getPassword())
             || user1.getEmail().equals(user.getEmail())
-                    || user1.getPhone().equals(user.getPhone())
+            || Objects.equals(user1.getPhone(), user.getPhone())
             ){
                 return false;
             }
