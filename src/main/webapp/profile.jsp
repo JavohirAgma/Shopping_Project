@@ -150,8 +150,8 @@
 <div class="content">
     <div class="profile-container">
         <div class="profile-header">
-            <h1>John Doe</h1>
-            <p>Username: johndoe</p>
+            <h1> <%=user.getName()%></h1>
+            <p>Username: <%=user.getUserName()%></p>
         </div>
         <ul class="profile-details">
             <li>
@@ -162,7 +162,7 @@
             </li>
             <li>
                 <%for (UserRole userRole : role) {%>
-                <span>Status:</span> <span><%=userRole.toString()%></span>
+                <span>Status:</span><%=userRole.toString()%>
                     <%}%>
             </li>
         </ul>
