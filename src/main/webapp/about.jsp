@@ -42,12 +42,6 @@
             font-size: 1em;
         }
 
-        .featured {
-            background: url('featured.jpg') no-repeat center center/cover;
-            color: #fff;
-            text-align: center;
-            padding: 100px 20px;
-        }
 
         .featured h1 {
             font-size: 3em;
@@ -70,29 +64,13 @@
             display: inline-block;
         }
 
-        .products {
-            padding: 50px 20px;
-            text-align: center;
-        }
 
         .products h2 {
             font-size: 2.5em;
             margin-bottom: 20px;
         }
 
-        .product-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
-            gap: 20px;
-        }
 
-        .product-item {
-            background-color: #f9f9f9;
-            padding: 20px;
-            border: 1px solid #ddd;
-            border-radius: 5px;
-            text-align: center;
-        }
 
         .product-item img {
             max-width: 100%;
@@ -113,12 +91,34 @@
             margin: 0;
         }
 
+        .about {
+            background-color: #f9f9f9;
+            padding: 50px 20px;
+            text-align: center;
+        }
+
+        .about h2 {
+            font-size: 2.5em;
+            margin-bottom: 20px;
+        }
+
+        .about p {
+            font-size: 1.2em;
+            line-height: 1.6;
+            color: #333;
+            margin-bottom: 20px;
+        }
+
         footer {
             background-color: #333;
             color: #fff;
             text-align: center;
             padding: 20px 0;
         }
+        footer {
+            margin-top:280px;
+        }
+
     </style>
 </head>
 <%Integer id = (Integer) request.getSession().getAttribute("userId");%>
@@ -129,7 +129,7 @@
         <ul>
             <li><a href="#home">Home</a></li>
             <li><a href="#shop">Shop</a></li>
-            <li><a href="/about">About</a></li>
+            <li><a href="#about">About</a></li>
             <%if(id==null){%>
             <li><a href="/login">LogIn</a></li>
             <%}else{%>
@@ -139,36 +139,12 @@
     </nav>
 </header>
 
-<section class="featured">
-    <h1>Welcome to Our Shop</h1>
-    <p>Discover our exclusive collection</p>
-    <a href="#shop" class="btn">Shop Now</a>
-</section>
 
-<section class="products">
-    <h2>Featured Products</h2>
-    <div class="product-grid">
-        <div class="product-item">
-            <img src="product1.jpg" alt="Product 1">
-            <h3>Product 1</h3>
-            <p>$19.99</p>
-        </div>
-        <div class="product-item">
-            <img src="product2.jpg" alt="Product 2">
-            <h3>Product 2</h3>
-            <p>$29.99</p>
-        </div>
-        <div class="product-item">
-            <img src="product3.jpg" alt="Product 3">
-            <h3>Product 3</h3>
-            <p>$39.99</p>
-        </div>
-        <div class="product-item">
-            <img src="product4.jpg" alt="Product 4">
-            <h3>Product 4</h3>
-            <p>$49.99</p>
-        </div>
-    </div>
+
+<section class="about">
+    <h2>About Us</h2>
+    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla convallis libero et purus tincidunt condimentum. Quisque gravida felis at turpis fermentum, sed facilisis velit hendrerit. Nullam eget nulla in leo dignissim ultricies. Phasellus feugiat arcu at felis hendrerit, nec volutpat ligula condimentum. Suspendisse rutrum mauris sit amet pulvinar pellentesque. Fusce scelerisque ipsum id dapibus vehicula. In hac habitasse platea dictumst.</p>
+    <p>Vestibulum tincidunt magna a sem vulputate, vitae rutrum tortor sagittis. Nullam eget lacus sit amet quam pharetra ultrices. Proin tincidunt consectetur risus, ac elementum justo faucibus nec. Fusce nec purus mauris. Duis et tellus eget ligula varius iaculis. Integer nec lectus dolor. Mauris quis sollicitudin nisi.</p>
 </section>
 
 <footer>
