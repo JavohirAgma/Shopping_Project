@@ -61,8 +61,6 @@ public class UserRepository implements BaseRepository<User>{
                         role2.add(UserRole.ADMIN);
                     }
                 }
-
-
                 User build = User.builder()
                         .id(id1)
                         .name(name)
@@ -114,8 +112,6 @@ public class UserRepository implements BaseRepository<User>{
                 for (Integer i : role) {
                     UserRole categoryByOrdinal = UserRole.getCategoryByOrdinal(i);
                     roles.add(categoryByOrdinal);
-                    System.out.println(i);
-                    System.out.println(i);
                 }
                 User user = User.builder()
                         .id(id1)
