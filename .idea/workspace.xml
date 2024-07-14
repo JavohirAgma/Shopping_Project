@@ -24,8 +24,8 @@
         <option value="Enum" />
         <option value="package-info" />
         <option value="Interface" />
-        <option value="Class" />
         <option value="Jsp File" />
+        <option value="Class" />
       </list>
     </option>
   </component>
@@ -239,6 +239,7 @@
       <workItem from="1720951229678" duration="7000" />
       <workItem from="1720956774532" duration="45000" />
       <workItem from="1720959018542" duration="551000" />
+      <workItem from="1720959732626" duration="338000" />
     </task>
     <task id="LOCAL-00001" summary="birinchisi">
       <option name="closed" value="true" />
@@ -440,7 +441,15 @@
       <option name="project" value="LOCAL" />
       <updated>1720959363853</updated>
     </task>
-    <option name="localTasksCounter" value="26" />
+    <task id="LOCAL-00026" summary="*">
+      <option name="closed" value="true" />
+      <created>1720959970419</created>
+      <option name="number" value="00026" />
+      <option name="presentableId" value="LOCAL-00026" />
+      <option name="project" value="LOCAL" />
+      <updated>1720959970419</updated>
+    </task>
+    <option name="localTasksCounter" value="27" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
