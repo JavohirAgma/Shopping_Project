@@ -156,12 +156,12 @@ public class UserRepository implements BaseRepository<User>{
     }
 
 
-    public boolean setRole(Integer user_id,Integer role_id) {
+    public boolean setRoleCeller(Integer user_id) {
         try (
                 Connection connection = DbConnection.getConnection();
                 Statement statement = connection.createStatement();
         ){
-            String query = "insert into connection_role(user_id,role_id) values(%s,%s)" .formatted(user_id,role_id);
+            String query = "insert into connection_role(user_id,role_id) values(%s,2)" .formatted(user_id);
             statement.execute(query);
             return true;
         } catch (SQLException e) {

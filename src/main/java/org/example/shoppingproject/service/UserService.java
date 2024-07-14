@@ -36,4 +36,7 @@ public class UserService {
     public User get(Integer userId) {
         return userRepository.get(userId);
     }
+    public boolean becameSeller(Integer sellerId) {
+        return userRepository.setRoleCeller(sellerId);
+    }
 }
