@@ -165,7 +165,9 @@
                     <%}%>
             </li>
         </ul>
-        <button class="become-seller-btn">Become a Seller</button>
+        <form action="/becomeSeller" method="POST">
+        <button class="become-seller-btn" type="submit">Become a Seller</button>
+        </form>
     </div>
 </div>
 </body>
