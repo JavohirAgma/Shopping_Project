@@ -167,7 +167,6 @@
             </li>
             <li>
                 <span>Status: </span>
-
                  <%for (int i=0;i<role.size();i++) {%>
                 <% if (i+1==role.size()){%>
                 <%=role.get(i).toString()%>
