@@ -10,7 +10,6 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="634c8ec2-e0fd-4684-8552-6c024b986986" name="Changes" comment="*">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/org/example/shoppingproject/config/DbConnection.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/shoppingproject/config/DbConnection.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -240,6 +239,7 @@
       <workItem from="1720956774532" duration="45000" />
       <workItem from="1720959018542" duration="551000" />
       <workItem from="1720959732626" duration="338000" />
+      <workItem from="1720967525168" duration="75000" />
     </task>
     <task id="LOCAL-00001" summary="birinchisi">
       <option name="closed" value="true" />
@@ -449,7 +449,15 @@
       <option name="project" value="LOCAL" />
       <updated>1720959970419</updated>
     </task>
-    <option name="localTasksCounter" value="27" />
+    <task id="LOCAL-00027" summary="*">
+      <option name="closed" value="true" />
+      <created>1720967554837</created>
+      <option name="number" value="00027" />
+      <option name="presentableId" value="LOCAL-00027" />
+      <option name="project" value="LOCAL" />
+      <updated>1720967554837</updated>
+    </task>
+    <option name="localTasksCounter" value="28" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
