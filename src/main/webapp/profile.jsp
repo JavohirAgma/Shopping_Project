@@ -172,8 +172,12 @@
            chek=true;
         }}%>
         <%if (!chek){%>
-        <form action="/becomeSeller" method="POST">
+        <form action="/profile" method="GET">
             <button class="become-seller-btn" type="submit">Become a Seller</button>
+        </form>
+        <%}else {%>
+        <form action="seller/createShop" method="POST">
+            <button class="become-seller-btn" type="submit">Create Shop</button>
         </form>
         <%}%>
     </div>
