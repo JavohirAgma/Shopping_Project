@@ -130,21 +130,27 @@
     </style>
 </head>
 <body>
+<%HttpSession session1 = request.getSession();
+    Integer id =(Integer) session1.getAttribute("userId");
+    UserService userService= new UserService();
+    User user = userService.get(id);
+    List<UserRole> role = user.getRole();
+    int size = role.size();
+%>
 <div class="sidebar">
     <ul>
         <li><a href="/main.jsp">Home</a></li>
         <li><a href="#">Categories</a></li>
         <li><a href="/logOut">LogOut</a></li>
         <li><a href="/settings">Settings</a></li>
+        <%if (size>=2){%>
+        <li><a href="/createShop">create shop</a></li>
+        <%}%>
+
+
+
     </ul>
 </div>
-
-<%HttpSession session1 = request.getSession();
- Integer id =(Integer) session1.getAttribute("userId");
- UserService userService= new UserService();
-    User user = userService.get(id);
-    List<UserRole> role = user.getRole();
-%>
 
 <div class="content">
     <div class="profile-container">
@@ -166,12 +172,7 @@
                     <%}%>
             </li>
         </ul>
-        <%boolean chek = false;%>
-        <%for (UserRole userRole : role) {%>
-        <%if (userRole.equals(UserRole.getCategoryByOrdinal(2))){
-           chek=true;
-        }}%>
-        <%if (!chek){%>
+        <%if (size==1){%>
         <form action="/becomeSeller" method="post">
             <button class="become-seller-btn" type="submit">Become a Seller</button>
         </form>
