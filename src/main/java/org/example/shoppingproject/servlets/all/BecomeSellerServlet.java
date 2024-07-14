@@ -1,4 +1,4 @@
-package org.example.shoppingproject.servlets;
+package org.example.shoppingproject.servlets.all;
 
 import jakarta.servlet.ServletException;
 import jakarta.servlet.annotation.WebServlet;
@@ -6,10 +6,12 @@ import jakarta.servlet.http.HttpServlet;
 import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
 import jakarta.servlet.http.HttpSession;
+import org.example.shoppingproject.enums.UserRole;
 import org.example.shoppingproject.model.User;
 import org.example.shoppingproject.service.UserService;
 
 import java.io.IOException;
+import java.util.List;
 
 
 @WebServlet(name = "becomeSeller",value = "/becomeSeller")
@@ -26,7 +28,17 @@ public class BecomeSellerServlet extends HttpServlet {
 
     @Override
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-        resp.sendRedirect("/profile.jsp");
+        HttpSession session = req.getSession();
+        Integer id = (Integer)session.getAttribute("userId");
+        System.out.println(id);
+        User user = userService.get(id);
+        List<UserRole> role = user.getRole();
+        if (id==null) {
+            resp.sendRedirect("/main.jsp");
+        }else {
+            resp.sendRedirect("/profile.jsp");
+        }
+
     }
 }
 

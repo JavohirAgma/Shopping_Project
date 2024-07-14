@@ -1,4 +1,4 @@
-package org.example.shoppingproject.servlets;
+package org.example.shoppingproject.servlets.all;
 
 import jakarta.servlet.RequestDispatcher;
 import jakarta.servlet.ServletException;

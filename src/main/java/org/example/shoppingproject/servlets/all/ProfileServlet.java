@@ -1,4 +1,5 @@
-package org.example.shoppingproject.servlets;
+package org.example.shoppingproject.servlets.all;
+
 
 import jakarta.servlet.ServletException;
 import jakarta.servlet.annotation.WebServlet;
@@ -8,13 +9,15 @@ import jakarta.servlet.http.HttpServletResponse;
 
 import java.io.IOException;
 
+@WebServlet(name = "profile",value = "/profile")
+public class ProfileServlet  extends HttpServlet {
 
-@WebServlet(name = "logOut",value = "/logOut")
-public class LogOut extends HttpServlet {
     @Override
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-        req.getSession().setAttribute("userId",null);
-        resp.sendRedirect("main.jsp");
+        req.getRequestDispatcher("profile.jsp").forward(req, resp);
     }
 
+    @Override
+    protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
+    }
 }

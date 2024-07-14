@@ -1,4 +1,4 @@
-package org.example.shoppingproject.servlets;
+package org.example.shoppingproject.servlets.all;
 
 import jakarta.servlet.RequestDispatcher;
 import jakarta.servlet.ServletException;
@@ -12,7 +12,6 @@ import org.example.shoppingproject.model.User;
 import org.example.shoppingproject.service.UserService;
 
 import java.io.IOException;
-import java.time.LocalDate;
 
 @WebServlet(name = "main", value = "/main")
 @MultipartConfig

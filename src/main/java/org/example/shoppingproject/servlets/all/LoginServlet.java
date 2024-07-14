@@ -1,4 +1,4 @@
-package org.example.shoppingproject.servlets;
+package org.example.shoppingproject.servlets.all;
 
 import jakarta.servlet.RequestDispatcher;
 import jakarta.servlet.ServletException;
@@ -14,9 +14,9 @@ import org.example.shoppingproject.service.UserService;
 import java.io.IOException;
 import java.time.LocalDate;
 
-@WebServlet(name = "about", value = "/about")
+@WebServlet(name = "login", value = "/login")
 @MultipartConfig
-public class AboutServlet extends HttpServlet {
+public class LoginServlet extends HttpServlet {
     private UserService userService = new UserService();
     @Override
     protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
@@ -25,6 +25,7 @@ public class AboutServlet extends HttpServlet {
         String password = req.getParameter("password");
         User login = userService.login(username,password);
         if (login!=null) {
+
             HttpSession session = req.getSession();
             session.setAttribute("userId", login.getId());
             resp.sendRedirect("/main.jsp");
@@ -36,7 +37,9 @@ public class AboutServlet extends HttpServlet {
 
     @Override
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-        RequestDispatcher requestDispatcher = req.getRequestDispatcher("/about.jsp");
+        String today = LocalDate.now().toString();
+        req.setAttribute("today",today);
+        RequestDispatcher requestDispatcher = req.getRequestDispatcher("/login.jsp");
         requestDispatcher.forward(req,resp);
 
     }
