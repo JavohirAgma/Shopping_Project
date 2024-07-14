@@ -168,6 +168,7 @@ public class UserRepository implements BaseRepository<User>{
             throw new RuntimeException(e);
         }
     }
+
     public boolean setRoleUser(Integer user_id) {
         try (
                 Connection connection = DbConnection.getConnection();
