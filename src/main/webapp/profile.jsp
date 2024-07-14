@@ -160,14 +160,22 @@
                 <span>Phone Number:</span> <%=user.getPhone()%>
             </li>
             <li>
-                <%for (UserRole userRole : role) {%>
-                <span>Status:</span><%=userRole.toString()%>
+                <span>Status: </span>
+                 <%for (UserRole userRole : role) {%>
+                 <%=userRole.toString()+", "%>
                     <%}%>
             </li>
         </ul>
+        <%boolean chek = false;%>
+        <%for (UserRole userRole : role) {%>
+        <%if (userRole.equals(UserRole.getCategoryByOrdinal(2))){
+           chek=true;
+        }}%>
+        <%if (!chek){%>
         <form action="/becomeSeller" method="POST">
-        <button class="become-seller-btn" type="submit">Become a Seller</button>
+            <button class="become-seller-btn" type="submit">Become a Seller</button>
         </form>
+        <%}%>
     </div>
 </div>
 </body>

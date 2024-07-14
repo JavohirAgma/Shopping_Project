@@ -21,14 +21,11 @@ public class BecomeSellerServlet extends HttpServlet {
         HttpSession session = req.getSession();
         Integer id = (Integer)session.getAttribute("userId");
         userService.becameSeller(id);
-
-
     }
-
 
     @Override
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-
+        req.getRequestDispatcher("main.jsp").forward(req, resp);
     }
 }
 
