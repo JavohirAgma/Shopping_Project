@@ -135,7 +135,7 @@
         <li><a href="/main.jsp">Home</a></li>
         <li><a href="#">Categories</a></li>
         <li><a href="/logOut">LogOut</a></li>
-        <li><a href="#">Settings</a></li>
+        <li><a href="/settings">Settings</a></li>
     </ul>
 </div>
 
@@ -172,12 +172,8 @@
            chek=true;
         }}%>
         <%if (!chek){%>
-        <form action="/profile" method="GET">
+        <form action="/becomeSeller" method="post">
             <button class="become-seller-btn" type="submit">Become a Seller</button>
-        </form>
-        <%}else {%>
-        <form action="seller/createShop" method="POST">
-            <button class="become-seller-btn" type="submit">Create Shop</button>
         </form>
         <%}%>
     </div>
