@@ -22,7 +22,7 @@ public class BecomeSellerServlet extends HttpServlet {
     protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
         HttpSession session = req.getSession();
         Integer id = (Integer)session.getAttribute("userId");
-            userService.becameSeller(id);
+        userService.becameSeller(id);
         resp.sendRedirect("/profile.jsp");
 
 
