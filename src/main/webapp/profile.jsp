@@ -99,7 +99,7 @@
             color: #333;
         }
 
-        .status {
+        status {
             display: inline-block;
             padding: 5px 10px;
             border-radius: 5px;
