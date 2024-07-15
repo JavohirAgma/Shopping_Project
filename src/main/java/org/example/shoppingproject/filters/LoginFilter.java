@@ -9,13 +9,13 @@ import java.io.IOException;
 
 
 @WebFilter(filterName = "LoginFilter",urlPatterns = {"/profile","/createShop","/becomeSeller"})
-public class LogingFilter implements Filter {
+public class LoginFilter implements Filter {
     @Override
     public void doFilter(ServletRequest request, ServletResponse response, FilterChain filterChain) throws IOException, ServletException {
         HttpServletRequest req= (HttpServletRequest) request;
         HttpServletResponse res= (HttpServletResponse) response;
         HttpSession session = req.getSession();
-        Integer userId =(Integer) session.getAttribute("userId");
+        Integer userId =(Integer) session.getAttribute("user  Id");
         if (userId!=null) {
             filterChain.doFilter(request,response);
         }else {
