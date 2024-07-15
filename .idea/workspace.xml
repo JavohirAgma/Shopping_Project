@@ -10,14 +10,9 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="634c8ec2-e0fd-4684-8552-6c024b986986" name="Changes" comment="*">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/shoppingproject/model/Store.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/shoppingproject/model/Store.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/org/example/shoppingproject/repository/ShopRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/shoppingproject/repository/ShopRepository.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/shoppingproject/service/ShopService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/shoppingproject/service/ShopService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/shoppingproject/servlets/seller/CreateShop.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/shoppingproject/servlets/seller/CreateShopServlet.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/scheme.sql" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/scheme.sql" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/about.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/about.jsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/seller/createShop.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/createShop.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/shoppingproject/servlets/seller/CreateShopServlet.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/shoppingproject/servlets/seller/CreateShopServlet.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/createShop.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/createShop.jsp" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -251,7 +246,7 @@
       <workItem from="1720959732626" duration="338000" />
       <workItem from="1720967525168" duration="75000" />
       <workItem from="1720978890730" duration="4033000" />
-      <workItem from="1721020063056" duration="15416000" />
+      <workItem from="1721020063056" duration="15757000" />
     </task>
     <task id="LOCAL-00001" summary="birinchisi">
       <option name="closed" value="true" />
@@ -501,7 +496,15 @@
       <option name="project" value="LOCAL" />
       <updated>1721061264404</updated>
     </task>
-    <option name="localTasksCounter" value="32" />
+    <task id="LOCAL-00032" summary="*">
+      <option name="closed" value="true" />
+      <created>1721064572037</created>
+      <option name="number" value="00032" />
+      <option name="presentableId" value="LOCAL-00032" />
+      <option name="project" value="LOCAL" />
+      <updated>1721064572037</updated>
+    </task>
+    <option name="localTasksCounter" value="33" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">

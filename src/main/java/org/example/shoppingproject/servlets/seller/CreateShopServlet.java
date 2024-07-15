@@ -24,6 +24,7 @@ public class CreateShopServlet extends HttpServlet {
         HttpSession session = req.getSession();
         Object userId = session.getAttribute("userId");
         String name = req.getParameter("name");
+        System.out.println(name);
         Store build = Store.builder().name(name).ownerId((Integer) userId).build();
         shopService.addStore(build);
         resp.sendRedirect("createShop.jsp");
