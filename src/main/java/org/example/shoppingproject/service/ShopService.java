@@ -10,13 +10,13 @@ public class ShopService {
     public ShopService() {
         this.shopRepository = new ShopRepository();
     }
-    public Store addStore(Store store) {
-        return null;
+    public Integer addStore(Store store) {
+        return shopRepository.save(store);
     }
     public Store getStore(Integer id) {
         return null;
     }
     public List<Store> getStoresWithUserId(Integer id) {
-        return null;
+        return shopRepository.getStoreByUserId(id);
     }
 }
