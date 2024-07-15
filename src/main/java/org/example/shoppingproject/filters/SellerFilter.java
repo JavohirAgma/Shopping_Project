@@ -13,7 +13,7 @@ import org.example.shoppingproject.service.UserService;
 import java.io.IOException;
 import java.util.List;
 
-@WebFilter(filterName = "SellerFilter" , urlPatterns = "/seller/createShop")
+@WebFilter(filterName = "SellerFilter" , urlPatterns = "/createShop")
 public class SellerFilter implements Filter {
     @Override
     public void doFilter(ServletRequest servletRequest, ServletResponse servletResponse, FilterChain filterChain) throws IOException, ServletException {
@@ -24,19 +24,15 @@ public class SellerFilter implements Filter {
         UserService userService= new UserService();
         User user = userService.get(userId);
         List<UserRole> role = user.getRole();
-        if (userId!=null) { 
-            Boolean check=false;
-            for (UserRole userRole : role) {
-                if (userRole.equals(UserRole.CONSUMER)) {
-                    check=true;
-                }
-            }
-            if (check){
-                filterChain.doFilter(servletRequest,servletResponse);
-            }else {
+        if (userId!=null) {
+                if (role.size()==2) {
+                    filterChain.doFilter(servletRequest,servletResponse);
+                }else {
                 System.out.println("Keldi");
                 res.sendError(403, "Not authorized");
             }
+
+
         }else {
             System.out.println("betga keldi");
             res.sendRedirect("/main.jsp");
