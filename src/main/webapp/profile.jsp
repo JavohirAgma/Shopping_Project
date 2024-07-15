@@ -141,14 +141,11 @@
     <ul>
         <li><a href="/main.jsp">Home</a></li>
         <li><a href="#">Categories</a></li>
-        <li><a href="/logOut">LogOut</a></li>
         <li><a href="/settings">Settings</a></li>
+        <li><a href="/logOut">LogOut</a></li>
         <%if (size>=2){%>
         <li><a href="/createShop">create shop</a></li>
         <%}%>
-
-
-
     </ul>
 </div>
 
