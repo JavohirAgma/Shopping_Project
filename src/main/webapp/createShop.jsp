@@ -78,12 +78,13 @@
 <div class="todo-list-container">
     <h2>To-Do List</h2>
     <div id="todoList">
+        <%if (!stores.isEmpty()){%>
         <%for (Store store : stores) {%>
         <div class="todo-item">
             <strong>Name:</strong> <%=store.getName()%><br>
-            <strong>File:</strong> <a href="/download?photoId=<%store.getPhotoId()%>">EnterShop</a>
+            <strong><a href="/enterS    hop?shopId=<%store.getId();%>"></a></strong>
         </div>
-        <%}%>
+        <%}}%>
     </div>
 </div>
 
