@@ -70,8 +70,11 @@
 <div class="container">
     <h2>Create To-Do Item for</h2>
     <form action="/createShop" method="post"  id="todoForm" enctype="multipart/form-data">
-        <input type="text" name="name" id="name" placeholder="Shop Name" required>
-        <button id="add-btn" type="submit">Add Shop</button>
+
+        <input type="text" name="name" id="name" required>
+
+
+        <button type="submit">Add Shop</button>
     </form>
 </div>
 

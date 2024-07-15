@@ -23,20 +23,14 @@ public class SellerFilter implements Filter {
         Integer userId =(Integer) session.getAttribute("userId");
         UserService userService= new UserService();
         User user = userService.get(userId);
+
         List<UserRole> role = user.getRole();
-        if (userId!=null) {
                 if (role.size()==2) {
                     filterChain.doFilter(servletRequest,servletResponse);
                 }else {
-                System.out.println("Keldi");
                 res.sendError(403, "Not authorized");
             }
 
 
-        }else {
-            System.out.println("betga keldi");
-            res.sendRedirect("/main.jsp");
-        }
-        System.out.println("hech qaysi mas");
     }
 }

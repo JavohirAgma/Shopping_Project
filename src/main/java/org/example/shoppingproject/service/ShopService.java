@@ -10,6 +10,7 @@ public class ShopService {
     public ShopService() {
         this.shopRepository = new ShopRepository();
     }
+
     public Integer addStore(Store store) {
         return shopRepository.save(store);
     }
