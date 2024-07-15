@@ -24,7 +24,7 @@ public class SellerFilter implements Filter {
         UserService userService= new UserService();
         User user = userService.get(userId);
         List<UserRole> role = user.getRole();
-        if (userId!=null) {
+        if (userId!=null) { 
             Boolean check=false;
             for (UserRole userRole : role) {
                 if (userRole.equals(UserRole.CONSUMER)) {

@@ -15,7 +15,7 @@ public class LoginFilter implements Filter {
         HttpServletRequest req= (HttpServletRequest) request;
         HttpServletResponse res= (HttpServletResponse) response;
         HttpSession session = req.getSession();
-        Integer userId =(Integer) session.getAttribute("user  Id");
+        Integer userId =(Integer) session.getAttribute("userId");
         if (userId!=null) {
             filterChain.doFilter(request,response);
         }else {
