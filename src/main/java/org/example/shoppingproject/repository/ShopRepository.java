@@ -16,9 +16,6 @@ import java.util.List;
 public class ShopRepository implements BaseRepository<Store>{
     @Override
     public Integer save(Store store) {
-        return null;
-    }
-    public Integer save(Store store, Integer userId) {
         try (
                 Connection connection = DbConnection.getConnection();
                 Statement statement = connection.createStatement();
