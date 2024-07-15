@@ -15,7 +15,7 @@
 
     <error-page>
         <error-code>403</error-code>
-        <location>/pageNotFound.jsp</location>
+        <location>/forbidden.jsp</location>
     </error-page>
 
 
