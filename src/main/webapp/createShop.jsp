@@ -24,7 +24,7 @@
             width: 300px;
             margin-right: 20px;
         }
-        .form-group {
+        form-group {
             margin-bottom: 15px;
         }
         label {
@@ -68,28 +68,24 @@
 %>
 <%List<Store> stores = shopService.getStoresWithUserId((Integer) userId);%>
 <div class="container">
-    <h2>Create To-Do Item for</h2>
-    <form action="/createShop" method="post"  id="todoForm" enctype="multipart/form-data">
-
-        <input type="text" name="name" id="name" required>
-
-
+    <h2>Create Shop Item for</h2>
+    <form action="/createShop" method="POST">
+        <label for="name"> Name:
+        </label><input type="text" name="name" id="name" required>
         <button type="submit">Add Shop</button>
     </form>
 </div>
-
 <div class="todo-list-container">
-    <h2>To-Do List</h2>
+    <h2>Shop-List</h2>
     <div id="todoList">
         <%if (!stores.isEmpty()){%>
         <%for (Store store : stores) {%>
         <div class="todo-item">
             <strong>Name:</strong> <%=store.getName()%><br>
-            <strong><a href="/enterShop?shopId=<%store.getId();%>"></a></strong>
+            <strong><a href="/enterShop?shopId=<%store.getId();%>">Yozing </a></strong>
         </div>
         <%}}%>
     </div>
 </div>
-
 </body>
 </html>

@@ -70,7 +70,7 @@
         <p>You might not have the right credentials or the resource may be restricted.</p>
     </div>
     <div class="actions">
-        <a href="/" class="home-link">Return to Homepage</a>
+        <a href="/main.jsp" class="home-link">Return to Homepage</a>
         <a href="mailto:support@example.com" class="contact-link">Contact Support</a>
     </div>
 </div>

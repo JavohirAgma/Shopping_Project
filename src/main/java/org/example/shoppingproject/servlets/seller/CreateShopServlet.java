@@ -20,13 +20,11 @@ public class CreateShopServlet extends HttpServlet {
     }
 
     @Override
-    protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
+    protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws IOException {
+
         String name = req.getParameter("name");
         HttpSession session = req.getSession();
         Object userId = session.getAttribute("userId");
-        String name2 = req.getParameter("name");
-        System.out.println(name2);
-
         System.out.println(name);
         Store build = Store.builder().name(name).ownerId((Integer) userId).build();
         shopService.addStore(build);

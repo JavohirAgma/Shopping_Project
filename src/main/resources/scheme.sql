@@ -25,9 +25,18 @@ create table stores(
     ownerId int unique not null references users(id),
     isOpen boolean
 );
-select * from stores;
-truncate stores cascade ;
+create table products(
+  id serial primary key,
+  name varchar not null,
+  description varchar not null,
+  photoId int not null ,
+  isOpen boolean
+--   Category category
+);
+
+
 
 insert into user_role (role) values('USER'),('CONSUMER'),('ADMIN');
+
 insert into users (name ,gmail,password,username,phone_number,is_active) values ('Xushnud','xushnudxurramov@gmail.com','123','1xurramovv',976335259,true);
 insert into connection_role (user_id, role_id)values (1,3);
