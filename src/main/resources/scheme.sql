@@ -26,6 +26,7 @@ create table stores(
     isOpen boolean
 );
 select * from stores;
+truncate stores cascade ;
 
 insert into user_role (role) values('USER'),('CONSUMER'),('ADMIN');
 insert into users (name ,gmail,password,username,phone_number,is_active) values ('Xushnud','xushnudxurramov@gmail.com','123','1xurramovv',976335259,true);
