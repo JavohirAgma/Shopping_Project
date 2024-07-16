@@ -10,14 +10,15 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="634c8ec2-e0fd-4684-8552-6c024b986986" name="Changes" comment="*">
+      <change afterPath="$PROJECT_DIR$/src/main/java/org/example/shoppingproject/servlets/seller/CreateProductServlet.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/seller/createProduct.jsp" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/org/example/shoppingproject/config/DbConnection.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/shoppingproject/config/DbConnection.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/shoppingproject/servlets/errors/PageNotFoundServlet.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/shoppingproject/servlets/seller/CreateProductServlet.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/shoppingproject/servlets/seller/CreateProductServlet.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/shoppingproject/servlets/seller/CreateProduct.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/shoppingproject/servlets/seller/ShowProductServlet.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/org/example/shoppingproject/servlets/seller/CreateShopServlet.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/shoppingproject/servlets/seller/CreateShopServlet.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/shoppingproject/servlets/seller/ShowProductServlet.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/shoppingproject/servlets/seller/ShowProductServlet.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/createProduct.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/seller/showStores.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/createShop.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/seller/createShop.jsp" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/webapp/profile.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/profile.jsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/seller/createProduct.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/seller/createProduct.jsp" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -284,11 +285,7 @@
       <workItem from="1721120077317" duration="310000" />
       <workItem from="1721120399513" duration="954000" />
       <workItem from="1721121456631" duration="795000" />
-      <workItem from="1721122295702" duration="1533000" />
-      <workItem from="1721124383844" duration="102000" />
-      <workItem from="1721124622504" duration="717000" />
-      <workItem from="1721130531686" duration="10000" />
-      <workItem from="1721130652429" duration="438000" />
+      <workItem from="1721122295702" duration="662000" />
     </task>
     <task id="LOCAL-00001" summary="birinchisi">
       <option name="closed" value="true" />
@@ -586,15 +583,7 @@
       <option name="project" value="LOCAL" />
       <updated>1721119632876</updated>
     </task>
-    <task id="LOCAL-00038" summary="*">
-      <option name="closed" value="true" />
-      <created>1721123045627</created>
-      <option name="number" value="00038" />
-      <option name="presentableId" value="LOCAL-00038" />
-      <option name="project" value="LOCAL" />
-      <updated>1721123045627</updated>
-    </task>
-    <option name="localTasksCounter" value="39" />
+    <option name="localTasksCounter" value="38" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
