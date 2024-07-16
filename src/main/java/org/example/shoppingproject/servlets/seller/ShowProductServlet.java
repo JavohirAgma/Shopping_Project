@@ -9,18 +9,15 @@ import jakarta.servlet.http.HttpServletResponse;
 
 import java.io.IOException;
 
-@WebServlet(name = "createProduct",value = "/createProduct")
-public class CreateProduct extends HttpServlet {
+@WebServlet(name = "showProduct",value = "/showProduct")
+public class ShowProductServlet extends HttpServlet {
     @Override
     protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-
+        req.getRequestDispatcher("showStores.jsp").forward(req,resp);
     }
 
     @Override
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-
-
-
-
+        req.getRequestDispatcher("showStores.jsp").forward(req,resp);
     }
 }

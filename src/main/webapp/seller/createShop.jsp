@@ -105,11 +105,11 @@
 <div class="todo-list-container">
     <h2>Shop List</h2>
     <div id="todoList">
-        <% if (stores != null && !stores.isEmpty()) { %>
+        <% if (stores != null && !stores.isEmpty()) {%>
         <% for (Store store : stores) { %>
         <div class="todo-item">
             <strong>Name:</strong> <%=store.getName() %><br>
-            <strong><a href="/enterShop?shopId=<%=store.getId()%>">Enter Shop</a></strong>
+            <strong><a href="/createProduct?shopId=<%=store.getId()%>"><%=store.getName()%></a></strong>
         </div>
         <% } %>
         <% } else { %>
