@@ -16,7 +16,7 @@ public class CreateShopServlet extends HttpServlet {
     private ShopService shopService = new ShopService();
     @Override
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-        req.getRequestDispatcher("createShop.jsp").forward(req,resp);
+        req.getRequestDispatcher("seller/createShop.jsp").forward(req,resp);
     }
 
     @Override
@@ -26,6 +26,6 @@ public class CreateShopServlet extends HttpServlet {
         Object userId = session.getAttribute("userId");
         Store build = Store.builder().name(name).ownerId((Integer) userId).build();
         shopService.addStore(build);
-        resp.sendRedirect("createShop.jsp");
+        resp.sendRedirect("seller/createShop.jsp");
     }
 }

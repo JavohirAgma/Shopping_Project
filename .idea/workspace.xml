@@ -10,15 +10,9 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="634c8ec2-e0fd-4684-8552-6c024b986986" name="Changes" comment="*">
-      <change afterPath="$PROJECT_DIR$/src/main/java/org/example/shoppingproject/servlets/seller/CreateProductServlet.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/webapp/seller/createProduct.jsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/org/example/shoppingproject/config/DbConnection.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/shoppingproject/config/DbConnection.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/shoppingproject/servlets/seller/CreateProduct.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/shoppingproject/servlets/seller/ShowProductServlet.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/shoppingproject/servlets/seller/CreateProductServlet.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/shoppingproject/servlets/seller/CreateProductServlet.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/org/example/shoppingproject/servlets/seller/CreateShopServlet.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/shoppingproject/servlets/seller/CreateShopServlet.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/createProduct.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/seller/showStores.jsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/createShop.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/seller/createShop.jsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/profile.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/profile.jsp" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
