@@ -10,8 +10,13 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="634c8ec2-e0fd-4684-8552-6c024b986986" name="Changes" comment="*">
+      <change beforePath="$PROJECT_DIR$/.idea/dataSources.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_7_12_2024_9_11_PM__Changes_.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_7_12_2024_9_11_PM__Changes_.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_7_12_2024_9_09_PM__Changes_.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_7_12_2024_9_09_PM__Changes_.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_7_12_2024_9_11_PM__Changes_.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_7_12_2024_9_11_PM__Changes_.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/vcs.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/org/example/shoppingproject/config/DbConnection.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/shoppingproject/config/DbConnection.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/createShop.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/createShop.jsp" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -69,7 +74,7 @@
     &quot;Tomcat Server.Tomcat 10.1.25.executor&quot;: &quot;Run&quot;,
     &quot;git-widget-placeholder&quot;: &quot;master&quot;,
     &quot;kotlin-language-version-configured&quot;: &quot;true&quot;,
-    &quot;last_opened_file_path&quot;: &quot;D:/7-modul/3-dars/MyFirstWebApp&quot;,
+    &quot;last_opened_file_path&quot;: &quot;/Users/xushnudxurramov/IdeaProjects/Shopping_Project/src/main/resources/docs&quot;,
     &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
     &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
     &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
@@ -91,11 +96,8 @@
     <key name="CopyFile.RECENT_KEYS">
       <recent name="$PROJECT_DIR$/src/main/resources/docs" />
     </key>
-    <key name="MoveFile.RECENT_KEYS">
-      <recent name="D:\7-modul\proyekt\ShoppingProject\src\main\webapp" />
-    </key>
   </component>
-  <component name="RunManager" selected="Smart Tomcat.Tomcat: ShoppingProject">
+  <component name="RunManager">
     <configuration name="Tomcat 10.1.25" type="#com.intellij.j2ee.web.tomcat.TomcatRunConfigurationFactory" factoryName="Local" APPLICATION_SERVER_NAME="Tomcat 10.1.25" ALTERNATIVE_JRE_ENABLED="false">
       <option name="OPEN_IN_BROWSER_URL" value="http://localhost:8080/main.jsp" />
       <option name="BROWSER_ID" value="98ca6316-2f89-46d9-a9e5-fa9e2b0625b3" />
@@ -184,36 +186,12 @@
         </option>
       </method>
     </configuration>
-    <configuration name="Tomcat: ShoppingProject" type="com.poratu.idea.plugins.tomcat" temporary="true">
-      <predefined_log_file enabled="true" id="Tomcat Localhost Log" />
-      <predefined_log_file enabled="true" id="Tomcat Access Log" />
-      <predefined_log_file id="Tomcat Catalina Log" />
-      <predefined_log_file id="Tomcat Manager Log" />
-      <predefined_log_file id="Tomcat Host Manager Log" />
-      <option name="contextPath" value="/ShoppingProject" />
-      <option name="docBase" value="$PROJECT_DIR$/src/main/webapp" />
-      <option name="tomcatInfo">
-        <TomcatInfo>
-          <option name="name" value="Apache Tomcat/10.1.25" />
-          <option name="path" value="$USER_HOME$/Downloads/apache-tomcat-10.1.25" />
-          <option name="version" value="10.1.25.0" />
-        </TomcatInfo>
-      </option>
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <recent_temporary>
-      <list>
-        <item itemvalue="Smart Tomcat.Tomcat: ShoppingProject" />
-      </list>
-    </recent_temporary>
   </component>
   <component name="SharedIndexes">
     <attachedChunks>
       <set>
-        <option value="bundled-jdk-9f38398b9061-39b83d9b5494-intellij.indexing.shared.core-IU-241.17011.79" />
-        <option value="bundled-js-predefined-1d06a55b98c1-0b3e54e931b4-JavaScript-IU-241.17011.79" />
+        <option value="bundled-jdk-9f38398b9061-39b83d9b5494-intellij.indexing.shared.core-IU-241.18034.62" />
+        <option value="bundled-js-predefined-1d06a55b98c1-0b3e54e931b4-JavaScript-IU-241.18034.62" />
       </set>
     </attachedChunks>
   </component>
@@ -269,10 +247,8 @@
       <workItem from="1720959732626" duration="338000" />
       <workItem from="1720967525168" duration="75000" />
       <workItem from="1720978890730" duration="4033000" />
-      <workItem from="1721020063056" duration="15416000" />
-      <workItem from="1721067673742" duration="1585000" />
-      <workItem from="1721100125346" duration="777000" />
-      <workItem from="1721117476919" duration="1837000" />
+      <workItem from="1721020063056" duration="494000" />
+      <workItem from="1721123966328" duration="270000" />
     </task>
     <task id="LOCAL-00001" summary="birinchisi">
       <option name="closed" value="true" />
@@ -498,71 +474,7 @@
       <option name="project" value="LOCAL" />
       <updated>1721020073647</updated>
     </task>
-    <task id="LOCAL-00029" summary="*">
-      <option name="closed" value="true" />
-      <created>1721020570105</created>
-      <option name="number" value="00029" />
-      <option name="presentableId" value="LOCAL-00029" />
-      <option name="project" value="LOCAL" />
-      <updated>1721020570105</updated>
-    </task>
-    <task id="LOCAL-00030" summary="*">
-      <option name="closed" value="true" />
-      <created>1721020582432</created>
-      <option name="number" value="00030" />
-      <option name="presentableId" value="LOCAL-00030" />
-      <option name="project" value="LOCAL" />
-      <updated>1721020582432</updated>
-    </task>
-    <task id="LOCAL-00031" summary="*">
-      <option name="closed" value="true" />
-      <created>1721061264404</created>
-      <option name="number" value="00031" />
-      <option name="presentableId" value="LOCAL-00031" />
-      <option name="project" value="LOCAL" />
-      <updated>1721061264404</updated>
-    </task>
-    <task id="LOCAL-00032" summary="*">
-      <option name="closed" value="true" />
-      <created>1721066579000</created>
-      <option name="number" value="00032" />
-      <option name="presentableId" value="LOCAL-00032" />
-      <option name="project" value="LOCAL" />
-      <updated>1721066579000</updated>
-    </task>
-    <task id="LOCAL-00033" summary="*">
-      <option name="closed" value="true" />
-      <created>1721066751292</created>
-      <option name="number" value="00033" />
-      <option name="presentableId" value="LOCAL-00033" />
-      <option name="project" value="LOCAL" />
-      <updated>1721066751292</updated>
-    </task>
-    <task id="LOCAL-00034" summary="*">
-      <option name="closed" value="true" />
-      <created>1721069176937</created>
-      <option name="number" value="00034" />
-      <option name="presentableId" value="LOCAL-00034" />
-      <option name="project" value="LOCAL" />
-      <updated>1721069176937</updated>
-    </task>
-    <task id="LOCAL-00035" summary="*">
-      <option name="closed" value="true" />
-      <created>1721100399853</created>
-      <option name="number" value="00035" />
-      <option name="presentableId" value="LOCAL-00035" />
-      <option name="project" value="LOCAL" />
-      <updated>1721100399853</updated>
-    </task>
-    <task id="LOCAL-00036" summary="*">
-      <option name="closed" value="true" />
-      <created>1721118803430</created>
-      <option name="number" value="00036" />
-      <option name="presentableId" value="LOCAL-00036" />
-      <option name="project" value="LOCAL" />
-      <updated>1721118803430</updated>
-    </task>
-    <option name="localTasksCounter" value="37" />
+    <option name="localTasksCounter" value="29" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">

@@ -16,7 +16,7 @@ public interface DbConnection {
     static Properties getProperties(){
         Properties properties = new Properties();
         properties.put("user","postgres");
-        properties.put("password","Agma2008");
+        properties.put("password","990099413o");
         return properties;
     }
 
