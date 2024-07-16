@@ -23,6 +23,10 @@ public class SellerFilter implements Filter {
         Integer userId =(Integer) session.getAttribute("userId");
         UserService userService= new UserService();
         User user = userService.get(userId);
+        if(user==null) {
+            res.sendRedirect("/main.jsp");
+            return;
+        }
 
         List<UserRole> role = user.getRole();
         if (role.size()==2){
