@@ -108,8 +108,8 @@
         <% if (stores != null && !stores.isEmpty()) { %>
         <% for (Store store : stores) { %>
         <div class="todo-item">
-            <strong>Name:</strong> <%= store.getName() %><br>
-            <strong><a href="/enterShop?shopId=<%= store.getId() %>">Enter Shop</a></strong>
+            <strong>Name:</strong> <%=store.getName() %><br>
+            <strong><a href="/enterShop?shopId=<%=store.getId()%>">Enter Shop</a></strong>
         </div>
         <% } %>
         <% } else { %>
