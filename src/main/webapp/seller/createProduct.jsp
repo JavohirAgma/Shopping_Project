@@ -53,13 +53,11 @@
 <body>
 <div class="container">
     <h1>Create Product</h1>
-    <form action="/submit-product" method="post">
+    <form action="/createProduct" method="post">
         <label for="productName">Product Name:</label>
         <input type="text" id="productName" name="productName" required>
-
         <label for="productDescription">Product Description:</label>
         <textarea id="productDescription" name="productDescription" rows="4" required></textarea>
-
         <label for="productCategory">Category:</label>
         <select id="productCategory" name="productCategory" required>
             <option value="">Select a category</option>
@@ -69,7 +67,6 @@
             <option value="Sports">Sports</option>
             <option value="Toys">Toys</option>
         </select>
-
         <button type="submit">Create Product</button>
     </form>
 </div>

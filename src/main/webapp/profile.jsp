@@ -1,4 +1,3 @@
-<%@ page import="lombok.val" %>
 <%@ page import="org.example.shoppingproject.service.UserService" %>
 <%@ page import="org.example.shoppingproject.model.User" %>
 <%@ page import="org.example.shoppingproject.enums.UserRole" %>
@@ -8,8 +7,6 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>User Profile</title>
     <style>
         body {
@@ -140,7 +137,6 @@
     ShopService shopService= new ShopService();
     int size = role.size();
     List<Store> storesWithUserId = shopService.getStoresWithUserId(id);
-
 %>
 <div class="sidebar">
     <ul>
@@ -149,7 +145,7 @@
         <li><a href="/settings">Settings</a></li>
         <li><a href="/logOut">LogOut</a></li>
         <%if (size>=2){%>
-        <li><a href="/createShop">create shop</a></li>
+        <li><a href="/createShop">Create shop</a></li>
         <%}%>
         <%if (size>=2&&storesWithUserId.size()>0 ){%>
         <li><a href="/createProduct">create product</a></li>

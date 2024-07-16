@@ -12,12 +12,18 @@ import java.io.IOException;
 public class CreateProductServlet extends HttpServlet {
     @Override
     protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
+        String productName = req.getParameter("productName");
+        String productDescription = req.getParameter("productDescription");
+        String productCategory = req.getParameter("productCategory");
+        
+
+
 
     }
 
     @Override
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-        req.getRequestDispatcher("createProduct.jsp").forward(req,resp);
+        req.getRequestDispatcher("seller/createProduct.jsp").forward(req,resp);
 
     }
 }

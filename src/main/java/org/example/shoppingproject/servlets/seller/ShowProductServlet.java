@@ -13,11 +13,11 @@ import java.io.IOException;
 public class ShowProductServlet extends HttpServlet {
     @Override
     protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-        req.getRequestDispatcher("showStores.jsp").forward(req,resp);
+        req.getRequestDispatcher("seller/showStores.jsp").forward(req,resp);
     }
 
     @Override
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-        req.getRequestDispatcher("showStores.jsp").forward(req,resp);
+        req.getRequestDispatcher("seller/showStores.jsp").forward(req,resp);
     }
 }
