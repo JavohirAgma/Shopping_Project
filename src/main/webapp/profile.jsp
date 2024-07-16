@@ -3,6 +3,8 @@
 <%@ page import="org.example.shoppingproject.model.User" %>
 <%@ page import="org.example.shoppingproject.enums.UserRole" %>
 <%@ page import="java.util.List" %>
+<%@ page import="org.example.shoppingproject.service.ShopService" %>
+<%@ page import="org.example.shoppingproject.model.Store" %>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -135,7 +137,10 @@
     UserService userService= new UserService();
     User user = userService.get(id);
     List<UserRole> role = user.getRole();
+    ShopService shopService= new ShopService();
     int size = role.size();
+    List<Store> storesWithUserId = shopService.getStoresWithUserId(id);
+
 %>
 <div class="sidebar">
     <ul>
@@ -145,6 +150,9 @@
         <li><a href="/logOut">LogOut</a></li>
         <%if (size>=2){%>
         <li><a href="/createShop">create shop</a></li>
+        <%}%>
+        <%if (size>=2&&storesWithUserId.size()>0 ){%>
+        <li><a href="/createProduct">create product</a></li>
         <%}%>
     </ul>
 </div>
