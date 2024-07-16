@@ -24,7 +24,7 @@
             width: 300px;
             margin-right: 20px;
         }
-        form-group {
+        .form-group {
             margin-bottom: 15px;
         }
         label {
@@ -62,30 +62,26 @@
     </style>
 </head>
 <body>
-<%ShopService shopService = new ShopService();
-    HttpSession session1 = request.getSession();
-    Object userId = session1.getAttribute("userId");
-%>
-<%List<Store> stores = shopService.getStoresWithUserId((Integer) userId);%>
+<%List<Store> stores = (List<Store>) request.getAttribute("stores");%>
 <div class="container">
-    <h2>Create Shop Item for</h2>
-    <form action="/createShop" method="POST">
-        <label for="name"> Name:
-        </label><input type="text" name="name" id="name" required>
+    <h2>Create To-Do Item for</h2>
+    <form action="/createShop" method="post"  id="todoForm">
+        <input type="text" name="name" id="name" required>
         <button type="submit">Add Shop</button>
     </form>
 </div>
+
 <div class="todo-list-container">
-    <h2>Shop-List</h2>
+    <h2>To-Do List</h2>
     <div id="todoList">
-        <%if (!stores.isEmpty()){%>
         <%for (Store store : stores) {%>
         <div class="todo-item">
             <strong>Name:</strong> <%=store.getName()%><br>
-            <strong><a href="/enterShop?shopId=<%store.getId();%>">Yozing </a></strong>
+            <strong><a href="/enterShop?shopId=<%store.getId();%>">Enter Shop!</a></strong>
         </div>
-        <%}}%>
+        <%}%>
     </div>
 </div>
+
 </body>
 </html>

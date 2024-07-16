@@ -22,7 +22,7 @@ create table connection_role(
 create table stores(
     id serial primary key ,
     name varchar unique not null ,
-    ownerId int unique not null references users(id),
+    ownerId int not null references users(id),
     isOpen boolean
 );
 create table products(

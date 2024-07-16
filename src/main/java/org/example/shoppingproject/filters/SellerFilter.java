@@ -25,11 +25,11 @@ public class SellerFilter implements Filter {
         User user = userService.get(userId);
 
         List<UserRole> role = user.getRole();
-                if (role.size()==2) {
-                    filterChain.doFilter(servletRequest,servletResponse);
-                }else {
-                res.sendError(403, "Not authorized");
-            }
+        if (role.size()==2){
+            filterChain.doFilter(servletRequest,servletResponse);
+        }else {
+            res.sendError(403, "Not authorized");
+        }
 
 
     }
