@@ -14,5 +14,4 @@ public class ProductStore {
     private Integer productId;
     private Integer storeId;
     private Integer CountOfProduct;
-    private Integer SumOfProduct;
 }

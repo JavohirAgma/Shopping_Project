@@ -51,21 +51,28 @@
     </style>
 </head>
 <body>
+<%Object shopId = request.getAttribute("shopId");%>
 <div class="container">
     <h1>Create Product</h1>
     <form action="/createProduct" method="post">
         <label for="productName">Product Name:</label>
         <input type="text" id="productName" name="productName" required>
+
+        <input type="hidden" id="shopId" name="shopId" value="<%=shopId%>" required>
+
+
         <label for="productDescription">Product Description:</label>
         <textarea id="productDescription" name="productDescription" rows="4" required></textarea>
         <label for="productCategory">Category:</label>
         <select id="productCategory" name="productCategory" required>
             <option value="">Select a category</option>
-            <option value="Electronics">Electronics</option>
-            <option value="Clothing">Clothing</option>
-            <option value="Home & Garden">Home & Garden</option>
-            <option value="Sports">Sports</option>
-            <option value="Toys">Toys</option>
+            <option value="ELECTORNICS">Electronics</option>
+            <option value="MAISHIY_TEXNIKA">MAISHIY_TEXNIKA</option>
+            <option value="KIYIM">KIYIM</option>
+            <option value="AKKSESUARLAR">AKKSESUARLAR</option>
+            <option value="GOZALLALLIK_PARVARISH">GOZALLALLIK_PARVARISH</option>
+            <option value="OZIQ_OVQAT">OZIQ_OVQAT</option>
+
         </select>
         <button type="submit">Create Product</button>
     </form>

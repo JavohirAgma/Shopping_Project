@@ -30,9 +30,12 @@ create table products(
   name varchar not null,
   description varchar not null,
   photoId int not null ,
-  isOpen boolean
---   Category category
+  isOpen boolean,
+   store_id int ,
+  category varchar
 );
+drop table products;
+
 
 
 

@@ -1,44 +1,79 @@
 package org.example.shoppingproject.repository;
 
 import org.example.shoppingproject.config.DbConnection;
+import org.example.shoppingproject.enums.Category;
 import org.example.shoppingproject.model.Product;
+import org.example.shoppingproject.model.Store;
 
 import java.sql.Connection;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
+import java.util.ArrayList;
 import java.util.List;
 
 public class ProductRepository implements BaseRepository<Product>{
     @Override
     public Integer save(Product product) {
-//        try (
-//                Connection connection = DbConnection.getConnection();
-//                Statement statement = connection.createStatement();
-//        ){
-//            String query = "insert into products(name,gmail,password,username,phone_number,is_active) values('%s','%s','%s','%s','%s',%s) returning id;"
-//                    .formatted(user.getName(),user.getEmail(),user.getPassword(),user.getUserName(),user.getPhone(),user.getIsActive());
-//            ResultSet rs = statement.executeQuery(query);
-//            while (rs.next()){
-//                int id = rs.getInt("id");
-//                setRoleUser(id);
-//                return id;
-//            }
-//            return null;
-//        } catch (SQLException e) {
-//            throw new RuntimeException(e);
-//        }
+        try (
+                Connection connection = DbConnection.getConnection();
+                Statement statement = connection.createStatement();
+        ){
+            String query = "insert into products(name,description,photoId,isOpen,category,store_id) values('%s','%s','%s',%s,'%s',%s) returning id;"
+                    .formatted(product.getName(),product.getDescription(),product.getPhotoId(),true,product.getCategory(),product.getStoreId());
+            ResultSet rs = statement.executeQuery(query);
+            while (rs.next()){
+                int id = rs.getInt("id");
+                return id;
+            }
+        } catch (SQLException e) {
+            throw new RuntimeException(e);
+        }
         return null;
     }
 
     @Override
     public Product get(Integer id) {
+
         return null;
     }
 
     @Override
     public List<Product> getAll() {
         return List.of();
+    }
+
+    public List<Product> getAll(Integer id) {
+        List<Product> productList = new ArrayList<>();
+        try (
+                Connection connection = DbConnection.getConnection();
+                Statement statement = connection.createStatement();
+        ){
+            String query = "select * from products where storeId = %s"
+                    .formatted(id);
+            ResultSet rs = statement.executeQuery(query);
+            while (rs.next()){
+                int id1 = rs.getInt("id");
+                String name = rs.getString("name");
+                String category = rs.getString("category");
+                String description = rs.getString("description");
+                String photoId = rs.getString("photoId");
+                Boolean isOpen = rs.getBoolean("isOpen");
+                Product build = Product.builder()
+                        .photoId(photoId)
+                        .name(name)
+                        .description(description)
+                        .isOpen(isOpen)
+                        .id(id1)
+                        .storeId(id)
+                        .category(Category.valueOf(category))
+                        .build();
+                productList.add(build);
+            }
+        } catch (SQLException e) {
+            throw new RuntimeException(e);
+        }
+        return productList;
     }
 
     @Override
