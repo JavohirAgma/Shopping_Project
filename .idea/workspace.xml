@@ -10,8 +10,15 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="634c8ec2-e0fd-4684-8552-6c024b986986" name="Changes" comment="*">
+      <change afterPath="$PROJECT_DIR$/src/main/java/org/example/shoppingproject/servlets/seller/CreateProductServlet.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/seller/createProduct.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/org/example/shoppingproject/config/DbConnection.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/shoppingproject/config/DbConnection.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/createShop.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/createShop.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/shoppingproject/servlets/seller/CreateProduct.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/shoppingproject/servlets/seller/ShowProductServlet.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/shoppingproject/servlets/seller/CreateShopServlet.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/shoppingproject/servlets/seller/CreateShopServlet.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/createProduct.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/seller/showStores.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/createShop.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/seller/createShop.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/profile.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/profile.jsp" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -92,10 +99,11 @@
       <recent name="$PROJECT_DIR$/src/main/resources/docs" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/src/main/webapp/seller" />
       <recent name="D:\7-modul\proyekt\ShoppingProject\src\main\webapp" />
     </key>
   </component>
-  <component name="RunManager" selected="Smart Tomcat.Tomcat: ShoppingProject">
+  <component name="RunManager" selected="Tomcat Server.Tomcat 10.1.25">
     <configuration name="Tomcat 10.1.25" type="#com.intellij.j2ee.web.tomcat.TomcatRunConfigurationFactory" factoryName="Local" APPLICATION_SERVER_NAME="Tomcat 10.1.25" ALTERNATIVE_JRE_ENABLED="false">
       <option name="OPEN_IN_BROWSER_URL" value="http://localhost:8080/main.jsp" />
       <option name="BROWSER_ID" value="98ca6316-2f89-46d9-a9e5-fa9e2b0625b3" />
@@ -199,6 +207,7 @@
           <option name="version" value="10.1.25.0" />
         </TomcatInfo>
       </option>
+      <module name="ShoppingProject" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
@@ -272,7 +281,11 @@
       <workItem from="1721020063056" duration="15416000" />
       <workItem from="1721067673742" duration="1585000" />
       <workItem from="1721100125346" duration="777000" />
-      <workItem from="1721117476919" duration="1837000" />
+      <workItem from="1721117476919" duration="2514000" />
+      <workItem from="1721120077317" duration="310000" />
+      <workItem from="1721120399513" duration="954000" />
+      <workItem from="1721121456631" duration="795000" />
+      <workItem from="1721122295702" duration="662000" />
     </task>
     <task id="LOCAL-00001" summary="birinchisi">
       <option name="closed" value="true" />
@@ -562,7 +575,15 @@
       <option name="project" value="LOCAL" />
       <updated>1721118803430</updated>
     </task>
-    <option name="localTasksCounter" value="37" />
+    <task id="LOCAL-00037" summary="*">
+      <option name="closed" value="true" />
+      <created>1721119632876</created>
+      <option name="number" value="00037" />
+      <option name="presentableId" value="LOCAL-00037" />
+      <option name="project" value="LOCAL" />
+      <updated>1721119632876</updated>
+    </task>
+    <option name="localTasksCounter" value="38" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
