@@ -76,13 +76,17 @@
         <label for="productName">Product Name:</label>
         <input type="text" id="productName" name="productName" required>
 
+        <label for="price">Product price:</label>
+        <input type="text" id="price" name="price" required>
+
         <input type="hidden" id="shopId" name="shopId" value="<%=shopId%>" required>
         <input type="hidden" id="products" name="products" value="<%=products%>" required>
 
         <label for="productDescription">Product Description:</label>
         <textarea id="productDescription" name="productDescription" rows="4" required></textarea>
-
         <input type="file"  name="file" id="file">
+
+
 
 
         <label for="productCategory">Category:</label>
@@ -111,8 +115,7 @@
             </tr>
             </thead>
             <tbody>
-            <%-- Assuming you have a list of products in a request attribute --%>
-            <% if (products != null && !products.isEmpty()) { %>
+            <% if (products != null && !products.isEmpty()){ %>
             <% for (Product product : products) { %>
             <tr>
                 <td><%= product.getName() %></td>

@@ -19,8 +19,8 @@ public class ProductRepository implements BaseRepository<Product>{
                 Connection connection = DbConnection.getConnection();
                 Statement statement = connection.createStatement();
         ){
-            String query = "insert into products(name,description,photoId,isOpen,category,store_id) values('%s','%s','%s',%s,'%s',%s) returning id;"
-                    .formatted(product.getName(),product.getDescription(),product.getPhotoId(),true,product.getCategory(),product.getStoreId());
+            String query = "insert into products(name,description,photoId,isOpen,category,store_id,price) values('%s','%s','%s',%s,'%s',%s,%s) returning id;"
+                    .formatted(product.getName(),product.getDescription(),product.getPhotoId(),true,product.getCategory(),product.getStoreId(),product.getPrice());
             ResultSet rs = statement.executeQuery(query);
             while (rs.next()){
                 int id = rs.getInt("id");
@@ -51,6 +51,7 @@ public class ProductRepository implements BaseRepository<Product>{
             while (rs.next()){
                 int id1 = rs.getInt("id");
                 int id = rs.getInt("store_id");
+                int price = rs.getInt("price");
                 String name = rs.getString("name");
                 String category = rs.getString("category");
                 String description = rs.getString("description");
@@ -64,6 +65,7 @@ public class ProductRepository implements BaseRepository<Product>{
                         .id(id1)
                         .storeId(id)
                         .category(Category.valueOf(category))
+                        .price(price)
                         .build();
                 productList.add(build);
             }
@@ -86,6 +88,7 @@ public class ProductRepository implements BaseRepository<Product>{
             ResultSet rs = statement.executeQuery(query);
             while (rs.next()){
                 int id1 = rs.getInt("id");
+                int price = rs.getInt("price");
                 String name = rs.getString("name");
                 String category = rs.getString("category");
                 String description = rs.getString("description");
@@ -99,6 +102,7 @@ public class ProductRepository implements BaseRepository<Product>{
                         .id(id1)
                         .storeId(id)
                         .category(Category.valueOf(category))
+                        .price(price)
                         .build();
                 productList.add(build);
             }

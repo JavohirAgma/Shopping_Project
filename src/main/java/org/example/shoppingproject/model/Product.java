@@ -17,6 +17,7 @@ public class Product {
     private String photoId;
     private Integer storeId;
     private boolean isOpen;
+    private Integer price;
     private Category category;
 
 }

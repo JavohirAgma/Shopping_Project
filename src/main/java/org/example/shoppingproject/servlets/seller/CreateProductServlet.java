@@ -26,7 +26,6 @@ public class CreateProductServlet extends HttpServlet {
     ImageService imageService = new ImageService();
     @Override
     protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-
         Part file = req.getPart("file");
         String submittedFileName = file.getSubmittedFileName();
         String type = submittedFileName.substring(submittedFileName.lastIndexOf("."));
@@ -38,17 +37,16 @@ public class CreateProductServlet extends HttpServlet {
         String productDescription = req.getParameter("productDescription");
         String productCategory = req.getParameter("productCategory");
         Integer shopId= Integer.valueOf(req.getParameter("shopId"));
+        Integer price = Integer.valueOf(req.getParameter("price"));
         Product build = Product.builder()
                 .name(productName)
                 .description(productDescription)
                 .category(Category.valueOf(productCategory))
                 .storeId(shopId)
                 .photoId(uuid)
+                .price(price)
                 .build();
-
         Integer i = productService.addProduct(build);
-
-
         Image image = Image.builder()
                 .uuid(uuid)
                 .name(submittedFileName)
@@ -69,6 +67,8 @@ public class CreateProductServlet extends HttpServlet {
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
         String shopId = req.getParameter("shopId");
         req.setAttribute("shopId", shopId);
+        List<Product> allProducts = productService.getAllProducts(Integer.valueOf(shopId));
+        req.setAttribute("products",allProducts);
         req.getRequestDispatcher("seller/createProduct.jsp").forward(req,resp);
 
     }

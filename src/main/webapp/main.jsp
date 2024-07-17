@@ -101,6 +101,7 @@
             color: #fff;
             text-align: center;
             padding: 20px 0;
+            margin-top: 240px;
         }
         .search-container {
             display: flex;
@@ -168,11 +169,10 @@ List<Product> products = productService.getAll();
         <div class="product-item">
             <%ImageService imageService= new ImageService();
                 String writer = imageService.getWriter(product);
-                System.out.println(writer);
             %>
             <img  src="data:image/jpeg;base64,<%=writer%>" alt="Product Photo">
              <h3><%=product.getName()%></h3>
-            <p><%=product.getId()%></p>
+            <p><%=product.getPrice()+"-so'm"%></p>
         </div>
         <%}%>
     </div>
