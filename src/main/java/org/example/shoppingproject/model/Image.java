@@ -1,21 +1,19 @@
 package org.example.shoppingproject.model;
 
+
 import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
-import java.util.List;
-
 @Data
-@AllArgsConstructor
 @NoArgsConstructor
+@AllArgsConstructor
 @Builder
-public class Basket {
+public class Image {
     private Integer id;
-    private Integer userId;
+    private String name;
+    private String uuid;
+    private String type;
     private Integer productId;
-    private Integer countOfProduct;
-    private Integer opshiySumma;
-    private boolean isactive;
 }

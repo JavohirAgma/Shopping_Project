@@ -109,7 +109,7 @@
         <% for (Store store : stores) { %>
         <div class="todo-item">
             <strong>Name:</strong> <%=store.getName() %><br>
-            <strong><a href="/createProduct?shopId=<%=store.getId()%>"><%=store.getName()%></a></strong>
+            <strong><a href="/createProduct?shopId=<%=store.getId()%>">Enter Shop!</a></strong>
         </div>
         <% } %>
         <% } else { %>

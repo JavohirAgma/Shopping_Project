@@ -8,14 +8,18 @@ import jakarta.servlet.http.HttpServlet;
 import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
 import jakarta.servlet.http.HttpSession;
+import org.example.shoppingproject.model.Product;
 import org.example.shoppingproject.model.User;
+import org.example.shoppingproject.service.ProductService;
 import org.example.shoppingproject.service.UserService;
 
 import java.io.IOException;
+import java.util.List;
 
 @WebServlet(name = "main", value = "/main")
 @MultipartConfig
 public class MainServlet extends HttpServlet {
+    private ProductService productService = new ProductService();
     private UserService userService = new UserService();
     @Override
     protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
@@ -36,6 +40,8 @@ public class MainServlet extends HttpServlet {
     @Override
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
         RequestDispatcher requestDispatcher = req.getRequestDispatcher("/main.jsp");
+        List<Product> products = productService.getAll();
+        req.setAttribute("products", products);
         requestDispatcher.forward(req,resp);
 
     }

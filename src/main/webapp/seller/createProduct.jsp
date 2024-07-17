@@ -1,3 +1,5 @@
+<%@ page import="org.example.shoppingproject.model.Product" %>
+<%@ page import="java.util.List" %>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -12,7 +14,7 @@
             padding: 20px;
         }
         .container {
-            max-width: 600px;
+            max-width: 900px; /* Updated width to accommodate both form and list */
             margin: 0 auto;
             background-color: #fff;
             padding: 20px;
@@ -48,30 +50,83 @@
         button:hover {
             background-color: #45a049;
         }
+        .product-list {
+            margin-top: 20px;
+        }
+        .product-list table {
+            width: 100%;
+            border-collapse: collapse;
+        }
+        .product-list th, .product-list td {
+            border: 1px solid #ddd;
+            padding: 8px;
+            text-align: left;
+        }
+        .product-list th {
+            background-color: #f2f2f2;
+        }
     </style>
 </head>
 <body>
+<% Object shopId = request.getAttribute("shopId"); %>
+<% List<Product> products = (List<Product>) request.getAttribute("products"); %>
 <div class="container">
     <h1>Create Product</h1>
-    <form action="/submit-product" method="post">
+    <form action="/createProduct" method="post" enctype="multipart/form-data">
         <label for="productName">Product Name:</label>
         <input type="text" id="productName" name="productName" required>
 
+        <label for="price">Product price:</label>
+        <input type="text" id="price" name="price" required>
+
+        <input type="hidden" id="shopId" name="shopId" value="<%=shopId%>" required>
+        <input type="hidden" id="products" name="products" value="<%=products%>" required>
+
         <label for="productDescription">Product Description:</label>
         <textarea id="productDescription" name="productDescription" rows="4" required></textarea>
+        <input type="file"  name="file" id="file">
 
         <label for="productCategory">Category:</label>
         <select id="productCategory" name="productCategory" required>
             <option value="">Select a category</option>
-            <option value="Electronics">Electronics</option>
-            <option value="Clothing">Clothing</option>
-            <option value="Home & Garden">Home & Garden</option>
-            <option value="Sports">Sports</option>
-            <option value="Toys">Toys</option>
+            <option value="ELECTRONICS">Electronics</option>
+            <option value="MAISHIY_TEXNIKA">MAISHIY_TEXNIKA</option>
+            <option value="KIYIM">KIYIM</option>
+            <option value="AKKSESUARLAR">AKKSESUARLAR</option>
+            <option value="GOZALLALLIK_PARVARISH">GOZALLALLIK_PARVARISH</option>
+            <option value="OZIQ_OVQAT">OZIQ_OVQAT</option>
         </select>
 
         <button type="submit">Create Product</button>
     </form>
+
+    <div class="product-list">
+        <h2>Product List</h2>
+        <table>
+            <thead>
+            <tr>
+                <th>Product Name</th>
+                <th>Description</th>
+                <th>Category</th>
+            </tr>
+            </thead>
+            <tbody>
+            <% if (products != null && !products.isEmpty()){ %>
+            <% for (Product product : products) { %>
+            <tr>
+                <td><%= product.getName() %></td>
+                <td><%= product.getDescription() %></td>
+                <td><%= product.getCategory() %></td>
+            </tr>
+            <% } %>
+            <% } else { %>
+            <tr>
+                <td colspan="3">No products available.</td>
+            </tr>
+            <% } %>
+            </tbody>
+        </table>
+    </div>
 </div>
 </body>
 </html>

@@ -14,7 +14,10 @@ public class Product {
     private Integer id;
     private String name;
     private String description;
-    private Integer photoId;
+    private String photoId;
+    private Integer storeId;
     private boolean isOpen;
+    private Integer price;
     private Category category;
+
 }

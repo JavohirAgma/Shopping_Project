@@ -9,6 +9,9 @@
 <%@ page import="java.nio.file.Files" %>
 <%@ page import="java.util.Base64" %>
 <%@ page import="java.io.BufferedWriter" %>
+<%@ page import="org.example.shoppingproject.service.ShopService" %>
+<%@ page import="org.example.shoppingproject.model.Store" %>
+<%@ page import="java.util.ArrayList" %>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -132,9 +135,10 @@
     </style>
 </head>
 <%Integer id = (Integer) request.getSession().getAttribute("userId");
-ProductService productService = new ProductService();
-List<Product> products = productService.getAll();
-%>
+    ProductService productService = new ProductService();
+    ShopService shopService= new ShopService();
+    List<Store> stores = shopService.getStoresWithUserId(id);
+  %>
 <body>
 <header>
     <div class="logo">ShopLogo</div>
@@ -163,18 +167,27 @@ List<Product> products = productService.getAll();
 
 <section class="products">
     <h2>Featured Products</h2>
+
+
+
+
     <div class="product-grid">
-        <% for (Product product : products) { %>
-        <div class="product-item">
-            <%ImageService imageService= new ImageService();
-                String writer = imageService.getWriter(product);
-            %>
-            <img  src="data:image/jpeg;base64,<%=writer%>" alt="Product Photo">
-             <h3><%=product.getName()%></h3>
-            <p><%=product.getPrice()+"-so'm"%></p>
-        </div>
+
+        <% for (int i=0;i<stores.size();i++) {%>
+        <%List<Product>allProducts = productService.getAllProducts(stores.get(i).getId());%>
+        <% for (Product product: allProducts) {%>
+                <div class="product-item">
+                    <%ImageService imageService= new ImageService();
+                        String writer = imageService.getWriter(product);
+                    %>
+                    <img  src="data:image/jpeg;base64,<%=writer%>" alt="Product Photo">
+                    <h3><%=product.getName()%></h3>
+                    <p><%=product.getPrice()+"-so'm"%></p>
+                </div>
+        <%}%>
         <%}%>
     </div>
+
 </section>
 
 <footer>
