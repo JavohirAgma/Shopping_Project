@@ -86,9 +86,6 @@
         <textarea id="productDescription" name="productDescription" rows="4" required></textarea>
         <input type="file"  name="file" id="file">
 
-
-
-
         <label for="productCategory">Category:</label>
         <select id="productCategory" name="productCategory" required>
             <option value="">Select a category</option>
@@ -103,7 +100,6 @@
         <button type="submit">Create Product</button>
     </form>
 
-    <!-- Product List Section -->
     <div class="product-list">
         <h2>Product List</h2>
         <table>
