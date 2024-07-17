@@ -148,7 +148,7 @@
         <li><a href="/createShop">Create shop</a></li>
         <%}%>
         <%if (size>=2&&storesWithUserId.size()>0 ){%>
-        <li><a href="/showProduct">create product</a></li>
+        <li><a href="/showProduct">Show product</a></li>
         <%}%>
     </ul>
 </div>
