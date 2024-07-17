@@ -5,6 +5,8 @@ import lombok.Builder;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
+import java.util.List;
+
 @Data
 @AllArgsConstructor
 @NoArgsConstructor
@@ -14,6 +16,6 @@ public class Basket {
     private Integer userId;
     private Integer productId;
     private Integer countOfProduct;
-    private Integer productSum;
+    private Integer opshiySumma;
     private boolean isactive;
 }

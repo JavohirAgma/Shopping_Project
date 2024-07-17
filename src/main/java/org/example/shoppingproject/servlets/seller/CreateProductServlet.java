@@ -10,6 +10,7 @@ import org.example.shoppingproject.model.Product;
 import org.example.shoppingproject.service.ProductService;
 
 import java.io.IOException;
+import java.util.List;
 
 @WebServlet(name = "createProduct",value = "/createProduct")
 public class CreateProductServlet extends HttpServlet {
@@ -28,6 +29,8 @@ public class CreateProductServlet extends HttpServlet {
                 .storeId(shopId)
                 .build();
         productService.addProduct(build);
+        List<Product> allProducts = productService.getAllProducts(Integer.valueOf(shopId));
+        req.setAttribute("products",allProducts);
         req.getRequestDispatcher("seller/createProduct.jsp").forward(req,resp);
 
     }
@@ -36,6 +39,8 @@ public class CreateProductServlet extends HttpServlet {
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
         String shopId = req.getParameter("shopId");
         req.setAttribute("shopId", shopId);
+        List<Product> allProducts = productService.getAllProducts(Integer.valueOf(shopId));
+        req.setAttribute("products",allProducts);
         req.getRequestDispatcher("seller/createProduct.jsp").forward(req,resp);
 
     }

@@ -49,7 +49,7 @@ public class ProductRepository implements BaseRepository<Product>{
                 Connection connection = DbConnection.getConnection();
                 Statement statement = connection.createStatement();
         ){
-            String query = "select * from products where storeId = %s"
+            String query = "select * from products where store_id = %s"
                     .formatted(id);
             ResultSet rs = statement.executeQuery(query);
             while (rs.next()){
