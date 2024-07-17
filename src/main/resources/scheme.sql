@@ -29,7 +29,7 @@ create table products(
   id serial primary key,
   name varchar not null,
   description varchar not null,
-  photoId int not null ,
+  photoId varchar not null ,
   isOpen boolean,
    store_id int ,
   category varchar

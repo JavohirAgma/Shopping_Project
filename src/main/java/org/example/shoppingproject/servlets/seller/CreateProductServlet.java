@@ -46,7 +46,6 @@ public class CreateProductServlet extends HttpServlet {
                 .photoId(uuid)
                 .build();
 
-        Integer productId = build.getId();
         Integer i = productService.addProduct(build);
 
 
@@ -57,7 +56,7 @@ public class CreateProductServlet extends HttpServlet {
                 .type(type)
                 .build();
 
-        Integer save = imageService.save(image);
+        imageService.save(image);
 
         List<Product> allProducts = productService.getAllProducts(Integer.valueOf(shopId));
         req.setAttribute("products",allProducts);

@@ -5,6 +5,10 @@
 <%@ page import="org.example.shoppingproject.utils.FileWriterUtil" %>
 <%@ page import="org.example.shoppingproject.model.Image" %>
 <%@ page import="java.nio.file.Path" %>
+<%@ page import="java.io.File" %>
+<%@ page import="java.nio.file.Files" %>
+<%@ page import="java.util.Base64" %>
+<%@ page import="java.io.BufferedWriter" %>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -129,7 +133,7 @@
 <%Integer id = (Integer) request.getSession().getAttribute("userId");
 ProductService productService = new ProductService();
 List<Product> products = productService.getAll();
-    byte[] bytes = FileWriterUtil.readAll();
+    /*byte[] bytes = FileWriterUtil.readAll();*/
 %>
 <body>
 <header>
@@ -163,12 +167,11 @@ List<Product> products = productService.getAll();
         <% for (Product product : products) { %>
         <div class="product-item">
             <%ImageService imageService= new ImageService();
-                Image image = imageService.getByProductId(product.getId());
-                Path path= Path.of("/Users/xushnudxurramov/IdeaProjects/Shopping_Project/src/main/resources/docs/",image.getUuid()+image.getType());
+                String writer = imageService.getWriter(product);
+                System.out.println(writer);
             %>
-            <img src="/Users/xushnudxurramov/IdeaProjects/Shopping_Project/src/main/resources/docs/<%=image.getUuid()+image.getType()%>" alt="Product Photo">
+            <img  src="data:image/jpeg;base64,<%=writer%>" alt="Product Photo">
              <h3><%=product.getName()%></h3>
-
             <p><%=product.getId()%></p>
         </div>
         <%}%>
