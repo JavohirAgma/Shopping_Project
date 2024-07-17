@@ -13,7 +13,7 @@ import org.example.shoppingproject.service.UserService;
 import java.io.IOException;
 import java.util.List;
 
-@WebFilter(filterName = "SellerFilter" , urlPatterns = "/createShop")
+@WebFilter(filterName = "SellerFilter" , urlPatterns = {"/createShop","/createProduct","/showProduct"})
 public class SellerFilter implements Filter {
     @Override
     public void doFilter(ServletRequest servletRequest, ServletResponse servletResponse, FilterChain filterChain) throws IOException, ServletException {

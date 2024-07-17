@@ -134,7 +134,6 @@
 <%Integer id = (Integer) request.getSession().getAttribute("userId");
 ProductService productService = new ProductService();
 List<Product> products = productService.getAll();
-    /*byte[] bytes = FileWriterUtil.readAll();*/
 %>
 <body>
 <header>
