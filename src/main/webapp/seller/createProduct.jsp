@@ -72,7 +72,7 @@
 <% List<Product> products = (List<Product>) request.getAttribute("products"); %>
 <div class="container">
     <h1>Create Product</h1>
-    <form action="/createProduct" method="post">
+    <form action="/createProduct" method="post" enctype="multipart/form-data">
         <label for="productName">Product Name:</label>
         <input type="text" id="productName" name="productName" required>
 
@@ -81,6 +81,9 @@
 
         <label for="productDescription">Product Description:</label>
         <textarea id="productDescription" name="productDescription" rows="4" required></textarea>
+
+        <input type="file"  name="file" id="file">
+
 
         <label for="productCategory">Category:</label>
         <select id="productCategory" name="productCategory" required>

@@ -1,3 +1,10 @@
+<%@ page import="java.util.List" %>
+<%@ page import="org.example.shoppingproject.model.Product" %>
+<%@ page import="org.example.shoppingproject.service.ProductService" %>
+<%@ page import="org.example.shoppingproject.service.ImageService" %>
+<%@ page import="org.example.shoppingproject.utils.FileWriterUtil" %>
+<%@ page import="org.example.shoppingproject.model.Image" %>
+<%@ page import="java.nio.file.Path" %>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -119,7 +126,11 @@
         }
     </style>
 </head>
-<%Integer id = (Integer) request.getSession().getAttribute("userId");%>
+<%Integer id = (Integer) request.getSession().getAttribute("userId");
+ProductService productService = new ProductService();
+List<Product> products = productService.getAll();
+    byte[] bytes = FileWriterUtil.readAll();
+%>
 <body>
 <header>
     <div class="logo">ShopLogo</div>
@@ -149,26 +160,18 @@
 <section class="products">
     <h2>Featured Products</h2>
     <div class="product-grid">
+        <% for (Product product : products) { %>
         <div class="product-item">
-            <img src="product1.jpg" alt="Product 1">
-            <h3>Product 1</h3>
-            <p>$19.99</p>
+            <%ImageService imageService= new ImageService();
+                Image image = imageService.getByProductId(product.getId());
+                Path path= Path.of("/Users/xushnudxurramov/IdeaProjects/Shopping_Project/src/main/resources/docs/",image.getUuid()+image.getType());
+            %>
+            <img src="/Users/xushnudxurramov/IdeaProjects/Shopping_Project/src/main/resources/docs/<%=image.getUuid()+image.getType()%>" alt="Product Photo">
+             <h3><%=product.getName()%></h3>
+
+            <p><%=product.getId()%></p>
         </div>
-        <div class="product-item">
-            <img src="product2.jpg" alt="Product 2">
-            <h3>Product 2</h3>
-            <p>$29.99</p>
-        </div>
-        <div class="product-item">
-            <img src="product3.jpg" alt="Product 3">
-            <h3>Product 3</h3>
-            <p>$39.99</p>
-        </div>
-        <div class="product-item">
-            <img src="product4.jpg" alt="Product 4">
-            <h3>Product 4</h3>
-            <p>$49.99</p>
-        </div>
+        <%}%>
     </div>
 </section>
 

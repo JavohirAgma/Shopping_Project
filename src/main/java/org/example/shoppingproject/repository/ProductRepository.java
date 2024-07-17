@@ -38,10 +38,42 @@ public class ProductRepository implements BaseRepository<Product>{
         return null;
     }
 
-    @Override
+  @Override
     public List<Product> getAll() {
-        return List.of();
+
+        List<Product> productList = new ArrayList<>();
+        try (
+                Connection connection = DbConnection.getConnection();
+                Statement statement = connection.createStatement();
+        ){
+            String query = "select * from products where isOpen=true";
+            ResultSet rs = statement.executeQuery(query);
+            while (rs.next()){
+                int id1 = rs.getInt("id");
+                int id = rs.getInt("store_id");
+                String name = rs.getString("name");
+                String category = rs.getString("category");
+                String description = rs.getString("description");
+                String photoId = rs.getString("photoId");
+                Boolean isOpen = rs.getBoolean("isOpen");
+                Product build = Product.builder()
+                        .photoId(photoId)
+                        .name(name)
+                        .description(description)
+                        .isOpen(isOpen)
+                        .id(id1)
+                        .storeId(id)
+                        .category(Category.valueOf(category))
+                        .build();
+                productList.add(build);
+            }
+        } catch (SQLException e) {
+            throw new RuntimeException(e);
+        }
+        return productList;
+
     }
+
 
     public List<Product> getAll(Integer id) {
         List<Product> productList = new ArrayList<>();

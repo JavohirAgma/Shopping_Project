@@ -19,6 +19,9 @@ public class ProductService {
     public List<Product> getAllProducts(Integer storeId) {
         return productRepository.getAll(storeId);
     }
+    public  List<Product> getAll() {
+        return productRepository.getAll();
+    }
     public Product getProductById(Long id) {
         return null;
     }
