@@ -37,7 +37,7 @@ public class ImageService {
     public String getWriter(Product product){
         try {
             Image image = getByProductId(product.getId());
-            File file = new File("/Users/xushnudxurramov/IdeaProjects/Shopping_Project/src/main/resources/docs/"+image.getUuid()+image.getType());
+            File file = new File("E:\\7 modul\\Shopping\\src\\main\\resources\\images\\"+image.getUuid()+image.getType());
             byte[] bytes = Files.readAllBytes(file.toPath());
             String s = Base64.getEncoder().encodeToString(bytes);
             BufferedWriter bufferedWriter = new BufferedWriter(new FileWriter("base64.txt"));

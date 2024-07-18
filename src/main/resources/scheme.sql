@@ -32,10 +32,18 @@ create table products(
   photoId varchar not null ,
   isOpen boolean,
    store_id int ,
-  category varchar
+  category varchar,
+  price int not null
 );
 drop table products;
 
+create table image(
+    id serial primary key ,
+    name varchar,
+    uuid varchar,
+    type varchar,
+    product_id int references products(id)
+);
 
 
 
