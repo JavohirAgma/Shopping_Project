@@ -10,7 +10,7 @@ import java.util.List;
 import java.util.UUID;
 
 public interface FileWriterUtil {
-    ImageService imageService = new ImageService();
+     ImageService imageService = new ImageService();
 
     static String write(String type, byte[] bytes) throws IOException {
         String BASE_PATH = "D:\\7-modul\\proyekt\\ShoppingProject\\src\\main\\resources\\docs";

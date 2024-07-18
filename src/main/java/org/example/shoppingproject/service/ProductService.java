@@ -22,8 +22,11 @@ public class ProductService {
     public  List<Product> getAll() {
         return productRepository.getAll();
     }
-    public Product getProductById(Long id) {
-        return null;
+    public Product getProductById(Integer id) {
+        return productRepository.getProductById(id);
+    }
+    public boolean updateCount(Integer prductId, Integer count) {
+        return productRepository.updateCount(prductId, count);
     }
 
 

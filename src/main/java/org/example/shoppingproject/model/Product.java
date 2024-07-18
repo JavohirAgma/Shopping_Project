@@ -19,5 +19,5 @@ public class Product {
     private boolean isOpen;
     private Integer price;
     private Category category;
-
+    private Integer count;
 }

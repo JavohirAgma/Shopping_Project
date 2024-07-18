@@ -30,9 +30,6 @@ public class BecomeSellerServlet extends HttpServlet {
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
         HttpSession session = req.getSession();
         Integer id = (Integer)session.getAttribute("userId");
-        System.out.println(id);
-        User user = userService.get(id);
-        List<UserRole> role = user.getRole();
         if (id==null) {
             resp.sendRedirect("/main.jsp");
         }else {

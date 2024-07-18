@@ -31,19 +31,11 @@ create table products(
   description varchar not null,
   photoId varchar not null ,
   isOpen boolean,
-   store_id int ,
-  category varchar,
-  price int not null
+  store_id int ,
+  category varchar
 );
 drop table products;
 
-create table image(
-    id serial primary key ,
-    name varchar,
-    uuid varchar,
-    type varchar,
-    product_id int references products(id)
-);
 
 
 
