@@ -31,7 +31,7 @@ create table products(
   description varchar not null,
   photoId varchar not null ,
   isOpen boolean,
-   store_id int ,
+  store_id int ,
   category varchar
 );
 drop table products;

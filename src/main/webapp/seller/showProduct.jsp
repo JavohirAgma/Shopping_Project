@@ -178,6 +178,7 @@
             <img  src="data:image/jpeg;base64,<%=writer%>" alt="Product Photo">
             <h3><%=product.getName()%></h3>
             <p><%=product.getPrice()+"-so'm"%></p>
+            <p><%=product.getCount()+" ta"%></p>
         </div>
         <%}%>
         <%}%>

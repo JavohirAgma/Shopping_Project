@@ -38,6 +38,7 @@ public class CreateProductServlet extends HttpServlet {
         String productCategory = req.getParameter("productCategory");
         Integer shopId= Integer.valueOf(req.getParameter("shopId"));
         Integer price = Integer.valueOf(req.getParameter("price"));
+        Integer count = Integer.valueOf(req.getParameter("count"));
         Product build = Product.builder()
                 .name(productName)
                 .description(productDescription)
@@ -45,6 +46,7 @@ public class CreateProductServlet extends HttpServlet {
                 .storeId(shopId)
                 .photoId(uuid)
                 .price(price)
+                .count(count)
                 .build();
         Integer i = productService.addProduct(build);
         Image image = Image.builder()

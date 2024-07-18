@@ -15,7 +15,8 @@ public class Basket {
     private Integer id;
     private Integer userId;
     private Integer productId;
+    private Integer storeId;
     private Integer countOfProduct;
-    private Integer opshiySumma;
+    private Integer productSum;
     private boolean isactive;
 }

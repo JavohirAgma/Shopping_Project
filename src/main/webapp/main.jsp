@@ -165,14 +165,16 @@ List<Product> products = productService.getAll();
     <h2>Featured Products</h2>
     <div class="product-grid">
         <% for (Product product : products) { %>
-        <div class="product-item">
-            <%ImageService imageService= new ImageService();
-                String writer = imageService.getWriter(product);
-            %>
-            <img  src="data:image/jpeg;base64,<%=writer%>" alt="Product Photo">
-             <h3><%=product.getName()%></h3>
-            <p><%=product.getPrice()+"-so'm"%></p>
-        </div>
+        <a href="/enterProduct?productId=<%=product.getId()%>">
+            <div class="product-item">
+                <%ImageService imageService= new ImageService();
+                    String writer = imageService.getWriter(product);
+                %>
+                <img  src="data:image/jpeg;base64,<%=writer%>" alt="Product Photo">
+                <h3><%=product.getName()%></h3>
+                <p><%=product.getPrice()+"-so'm"%></p>
+            </div>
+        </a>
         <%}%>
     </div>
 </section>

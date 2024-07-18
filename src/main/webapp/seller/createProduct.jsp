@@ -13,6 +13,35 @@
             margin: 0;
             padding: 20px;
         }
+        header {
+            background-color: #333;
+            color: #fff;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 15px 20px;
+        }
+
+        header .logo {
+            font-size: 1.5em;
+        }
+
+        header nav ul {
+            list-style: none;
+            margin: 0;
+            padding: 0;
+            display: flex;
+        }
+
+        header nav ul li {
+            margin-left: 20px;
+        }
+
+        header nav ul li a {
+            color: #fff;
+            text-decoration: none;
+            font-size: 1em;
+        }
         .container {
             max-width: 900px; /* Updated width to accommodate both form and list */
             margin: 0 auto;
@@ -38,7 +67,7 @@
             border-radius: 4px;
             box-sizing: border-box;
         }
-        button {
+        .submit {
             background-color: #4CAF50;
             color: white;
             padding: 15px 20px;
@@ -47,7 +76,7 @@
             cursor: pointer;
             font-size: 16px;
         }
-        button:hover {
+        .submit:hover {
             background-color: #45a049;
         }
         .product-list {
@@ -68,8 +97,38 @@
     </style>
 </head>
 <body>
-<% Object shopId = request.getAttribute("shopId"); %>
+<% Integer id = (Integer) request.getSession().getAttribute("userId");
+    Object shopId = request.getAttribute("shopId"); %>
 <% List<Product> products = (List<Product>) request.getAttribute("products"); %>
+
+
+<header>
+    <div class="logo">ShopLogo</div>
+<%--    <div class="search-container">--%>
+<%--        <input type="text" class="search-input" placeholder="Search products">--%>
+<%--        <button class="search-button">--%>
+<%--            <i class="bi bi-search">--%>
+<%--                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-search" viewBox="0 0 16 16">--%>
+<%--                   <path d="M11.742 10.344a6.5 6.5 0 1 0-1.397 1.398h-.001q.044.06.098.115l3.85 3.85a1 1 0 0 0 1.415-1.414l-3.85-3.85a1 1 0 0 0-.115-.1zM12 6.5a5.5 5.5 0 1 1-11 0 5.5 5.5 0 0 1 11 0"/>--%>
+<%--                </svg>--%>
+<%--            </i>--%>
+<%--        </button>--%>
+<%--    </div>--%>
+    <nav>
+
+        <ul>
+            <li><a href="/main">Home</a></li>
+            <li><a href="/shop">Shop</a></li>
+            <li><a href="/about">About</a></li>
+            <%if(id==null){%>
+            <li><a href="/login">LogIn</a></li>
+            <%}else{%>
+            <li><a href="/profile">Profile</a></li>
+            <%}%>
+        </ul>
+    </nav>
+</header>
+
 <div class="container">
     <h1>Create Product</h1>
     <form action="/createProduct" method="post" enctype="multipart/form-data">
@@ -86,7 +145,8 @@
         <textarea id="productDescription" name="productDescription" rows="4" required></textarea>
         <input type="file"  name="file" id="file">
 
-
+        <label for="count">Product Count:</label>
+        <input type="number" id="count" name="count" required>
 
 
         <label for="productCategory">Category:</label>
@@ -100,7 +160,7 @@
             <option value="OZIQ_OVQAT">OZIQ_OVQAT</option>
         </select>
 
-        <button type="submit">Create Product</button>
+        <button class="submit" type="submit">Create Product</button>
     </form>
 
     <!-- Product List Section -->
@@ -112,6 +172,7 @@
                 <th>Product Name</th>
                 <th>Description</th>
                 <th>Category</th>
+                <th>Count</th>
             </tr>
             </thead>
             <tbody>
@@ -121,6 +182,7 @@
                 <td><%= product.getName() %></td>
                 <td><%= product.getDescription() %></td>
                 <td><%= product.getCategory() %></td>
+                <td><%= product.getCount() %></td>
             </tr>
             <% } %>
             <% } else { %>
