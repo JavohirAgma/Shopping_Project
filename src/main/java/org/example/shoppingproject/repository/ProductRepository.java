@@ -90,7 +90,7 @@ public class ProductRepository implements BaseRepository<Product>{
                 Connection connection = DbConnection.getConnection();
                 Statement statement = connection.createStatement();
         ){
-            String query = "select * from products where store_id = %s and isOpen=%s and count!=0"
+            String query = "select * from products where store_id = %s and isOpen=%s"
                     .formatted(id,true);
             ResultSet rs = statement.executeQuery(query);
             while (rs.next()){
@@ -132,6 +132,7 @@ public class ProductRepository implements BaseRepository<Product>{
                 int id1 = rs.getInt("id");
                 int price = rs.getInt("price");
                 int count = rs.getInt("count");
+                int store_id = rs.getInt("store_id");
                 String name = rs.getString("name");
                 String category = rs.getString("category");
                 String description = rs.getString("description");
@@ -143,7 +144,7 @@ public class ProductRepository implements BaseRepository<Product>{
                         .description(description)
                         .isOpen(isOpen)
                         .id(id1)
-                        .storeId(id)
+                        .storeId(store_id)
                         .category(Category.valueOf(category))
                         .price(price)
                         .count(count)
@@ -160,12 +161,13 @@ public class ProductRepository implements BaseRepository<Product>{
                 Connection connection = DbConnection.getConnection();
                 Statement statement = connection.createStatement();
         ){
-            String query = "delete from savat where user_id = %s"
-                    .formatted(productId);
+            String query = "update products set count = count - %s where id = %s"
+                    .formatted(count,productId);
             int i = statement.executeUpdate(query);
             return true;
         } catch (SQLException e) {
             throw new RuntimeException(e);
         }
     }
+
 }

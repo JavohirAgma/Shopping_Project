@@ -19,5 +19,4 @@ public class SavatService {
     public List<Basket> findAll(Integer userId) {
         return savatRepository.getAll(userId);
     }
-
 }

@@ -166,7 +166,7 @@
 </header>
 
 <section class="products">
-    <h2>Featured Products</h2>
+    <h2>My Products</h2>
     <div class="product-grid">
         <% for (int i=0;i<stores.size();i++) {%>
         <%List<Product>allProducts = productService.getAllProducts(stores.get(i).getId());%>

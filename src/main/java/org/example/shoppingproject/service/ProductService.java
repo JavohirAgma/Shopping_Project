@@ -25,6 +25,9 @@ public class ProductService {
     public Product getProductById(Integer id) {
         return productRepository.getProductById(id);
     }
+    public boolean updateCount(Integer prductId, Integer count) {
+        return productRepository.updateCount(prductId, count);
+    }
 
 
 }

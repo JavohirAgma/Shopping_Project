@@ -18,7 +18,7 @@ public class SavatRepository implements BaseRepository<Basket>{
                 Statement statement = connection.createStatement();
         ){
             String query = "insert into savat(store_id,product_id,user_id,count_product,sum_product,is_active) values(%s,%s,%s,%s,%s,%s) returning id;"
-                    .formatted(basket.getStoreId(),basket.getProductId(),basket.getUserId(),basket.getCountOfProduct(),basket.getProductSum(),true);
+                        .formatted(basket.getStoreId(),basket.getProductId(),basket.getUserId(),basket.getCountOfProduct(),basket.getProductSum(),true);
             ResultSet rs = statement.executeQuery(query);
             while (rs.next()){
                 int id = rs.getInt("id");
@@ -93,4 +93,5 @@ public class SavatRepository implements BaseRepository<Basket>{
             throw new RuntimeException(e);
         }
     }
+
 }

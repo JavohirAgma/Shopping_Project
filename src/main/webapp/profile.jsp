@@ -177,6 +177,9 @@
                 <%}%>
             </li>
         </ul>
+        <form action="/showBasket" method="get">
+            <button class="become-seller-btn" type="submit">Sea <B></B>asket</button>
+        </form>
         <%if (size==1){%>
         <form action="/becomeSeller" method="post">
             <button class="become-seller-btn" type="submit">Become a Seller</button>

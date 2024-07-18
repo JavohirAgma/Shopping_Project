@@ -8,13 +8,16 @@ import jakarta.servlet.http.HttpServletResponse;
 import jakarta.servlet.http.HttpSession;
 import org.example.shoppingproject.model.Basket;
 import org.example.shoppingproject.model.Product;
+import org.example.shoppingproject.service.ProductService;
 import org.example.shoppingproject.service.SavatService;
 
+import javax.management.remote.NotificationResult;
 import java.io.IOException;
 
 @WebServlet(name = "addSavat",value = "/addSavat")
 public class AddSavatServlet extends HttpServlet {
     SavatService savatService = new SavatService();
+    ProductService productService = new ProductService();
     @Override
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
         Integer id = Integer.valueOf(req.getParameter("id"));
@@ -51,5 +54,7 @@ public class AddSavatServlet extends HttpServlet {
                 .productSum(price)
                 .build();
         savatService.save(build);
+        productService.updateCount(id,count);
+        resp.sendRedirect("/main.jsp");
     }
 }
