@@ -1,10 +1,7 @@
 package org.example.shoppingproject.repository;
 
-import jakarta.servlet.http.HttpSession;
 import org.example.shoppingproject.config.DbConnection;
-import org.example.shoppingproject.enums.UserRole;
 import org.example.shoppingproject.model.Store;
-import org.example.shoppingproject.model.User;
 
 import java.sql.Connection;
 import java.sql.ResultSet;
@@ -74,5 +71,23 @@ public class ShopRepository implements BaseRepository<Store>{
             throw new RuntimeException(e);
         }
         return storeList;
+    }
+    public String findName(Integer id) {
+        try (
+                Connection connection = DbConnection.getConnection();
+                Statement statement = connection.createStatement();
+        ){
+
+            String query = "select name from stores where id = %s"
+                    .formatted(id);
+            ResultSet rs = statement.executeQuery(query);
+            while (rs.next()){
+                String name = rs.getString("name");
+                return name;
+            }
+            return null;
+        } catch (SQLException e) {
+            throw new RuntimeException(e);
+        }
     }
 }

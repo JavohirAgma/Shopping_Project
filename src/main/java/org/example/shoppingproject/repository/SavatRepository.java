@@ -17,12 +17,20 @@ public class SavatRepository implements BaseRepository<Basket>{
                 Connection connection = DbConnection.getConnection();
                 Statement statement = connection.createStatement();
         ){
-            String query = "insert into savat(store_id,product_id,user_id,count_product,sum_product,is_active) values(%s,%s,%s,%s,%s,%s) returning id;"
+            String query1="select * from savat where product_id=%s".formatted(basket.getProductId());
+            ResultSet resultSet = statement.executeQuery(query1);
+            if(resultSet.next()){
+                String query2 = "update savat set count_product = count_product + %s where product_id = %s".formatted(basket.getCountOfProduct(),basket.getProductId());
+                int i = statement.executeUpdate(query2);
+                return i;
+            }else{
+                String query = "insert into savat(store_id,product_id,user_id,count_product,sum_product,is_active) values(%s,%s,%s,%s,%s,%s) returning id;"
                         .formatted(basket.getStoreId(),basket.getProductId(),basket.getUserId(),basket.getCountOfProduct(),basket.getProductSum(),true);
-            ResultSet rs = statement.executeQuery(query);
-            while (rs.next()){
-                int id = rs.getInt("id");
-                return id;
+                ResultSet rs = statement.executeQuery(query);
+                while (rs.next()){
+                    int id = rs.getInt("id");
+                    return id;
+                }
             }
         } catch (SQLException e) {
             throw new RuntimeException(e);
@@ -75,8 +83,18 @@ public class SavatRepository implements BaseRepository<Basket>{
     }
 
     @Override
-    public boolean delete(Integer id) {
-        return false;
+    public boolean delete(Integer productId) {
+        try (
+                Connection connection = DbConnection.getConnection();
+                Statement statement = connection.createStatement();
+        ){
+            String query = "delete from savat where product_id = %s"
+                    .formatted(productId);
+            int i = statement.executeUpdate(query);
+            return true;
+        } catch (SQLException e) {
+            throw new RuntimeException(e);
+        }
     }
 
 

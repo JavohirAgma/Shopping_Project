@@ -19,4 +19,10 @@ public class SavatService {
     public List<Basket> findAll(Integer userId) {
         return savatRepository.getAll(userId);
     }
+    public boolean deleteBasketItem(Integer productId) {
+        return savatRepository.delete(productId);
+    }
+    public Integer Payment(Integer userId) {
+        return savatRepository.Payment(userId);
+    }
 }
