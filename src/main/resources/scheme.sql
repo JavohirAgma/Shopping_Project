@@ -32,14 +32,33 @@ create table products(
   photoId varchar not null ,
   isOpen boolean,
   store_id int ,
-  category varchar
+  category varchar,
+    price int not null ,
+    count int not null
 );
 drop table products;
 
+create table savat(
+                      id serial primary key ,
+                      store_id int references stores(id),
+                      product_id int references products(id),
+                      user_id int references users(id),
+                      count_product int,
+                      sum_product int,
+                      is_active boolean
+                  );
 
+create table image(
+                      id serial primary key ,
+                      name varchar,
+                      uuid varchar unique not null ,
+                      type varchar not null ,
+                      product_id int not null references products(id)
+);
 
 
 insert into user_role (role) values('USER'),('CONSUMER'),('ADMIN');
 
 insert into users (name ,gmail,password,username,phone_number,is_active) values ('Xushnud','xushnudxurramov@gmail.com','123','1xurramovv',976335259,true);
+
 insert into connection_role (user_id, role_id)values (1,3);

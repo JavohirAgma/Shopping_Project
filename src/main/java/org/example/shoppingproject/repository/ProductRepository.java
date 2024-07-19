@@ -45,6 +45,42 @@ public class ProductRepository implements BaseRepository<Product>{
                 Connection connection = DbConnection.getConnection();
                 Statement statement = connection.createStatement();
         ){
+            String query = "select * from products";
+            ResultSet rs = statement.executeQuery(query);
+            while (rs.next()){
+                int id1 = rs.getInt("id");
+                int id = rs.getInt("store_id");
+                int price = rs.getInt("price");
+                int count = rs.getInt("count");
+                String name = rs.getString("name");
+                String category = rs.getString("category");
+                String description = rs.getString("description");
+                String photoId = rs.getString("photoId");
+                Boolean isOpen = rs.getBoolean("isOpen");
+                Product build = Product.builder()
+                        .photoId(photoId)
+                        .name(name)
+                        .description(description)
+                        .isOpen(isOpen)
+                        .id(id1)
+                        .storeId(id)
+                        .category(Category.valueOf(category))
+                        .price(price)
+                        .count(count)
+                        .build();
+                productList.add(build);
+            }
+        } catch (SQLException e) {
+            throw new RuntimeException(e);
+        }
+        return productList;
+    }
+    public List<Product> getAllIsActive() {
+        List<Product> productList = new ArrayList<>();
+        try (
+                Connection connection = DbConnection.getConnection();
+                Statement statement = connection.createStatement();
+        ){
             String query = "select * from products where isOpen=true and count!=0";
             ResultSet rs = statement.executeQuery(query);
             while (rs.next()){
@@ -76,7 +112,6 @@ public class ProductRepository implements BaseRepository<Product>{
         return productList;
 
     }
-
     @Override
     public boolean delete(Integer id) {
         return false;
@@ -195,6 +230,19 @@ public class ProductRepository implements BaseRepository<Product>{
                 return name;
             }
             return null;
+        } catch (SQLException e) {
+            throw new RuntimeException(e);
+        }
+    }
+
+    public boolean setIsOpen(Integer id, boolean open){
+        try (
+                Connection connection = DbConnection.getConnection();
+                Statement statement = connection.createStatement();
+        ){
+            String query = "update products set isOpen = %s where id = %s".formatted(open,id);
+            statement.execute(query);
+            return true;
         } catch (SQLException e) {
             throw new RuntimeException(e);
         }

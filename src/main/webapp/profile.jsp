@@ -144,6 +144,9 @@
         <li><a href="#">Categories</a></li>
         <li><a href="/settings">Settings</a></li>
         <li><a href="/logOut">LogOut</a></li>
+<%--        <%if (size>=3){%>--%>
+        <li><a href="admin/adminSettings.jsp">Settings For Admin</a></li>
+<%--        <%}%>--%>
         <%if (size>=2){%>
         <li><a href="/createShop">Create shop</a></li>
         <%}%>
@@ -180,7 +183,7 @@
         <form action="/showBasket" method="get">
             <button class="become-seller-btn" type="submit">Sea Basket</button>
         </form>
-        <%if (size==1){%>
+        <%if (size!=2){%>
         <form action="/becomeSeller" method="post">
             <button class="become-seller-btn" type="submit">Become a Seller</button>
         </form>

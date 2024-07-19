@@ -40,7 +40,7 @@ public class MainServlet extends HttpServlet {
     @Override
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
         RequestDispatcher requestDispatcher = req.getRequestDispatcher("/main.jsp");
-        List<Product> products = productService.getAll();
+        List<Product> products = productService.getAllIsActive();
         req.setAttribute("products", products);
         requestDispatcher.forward(req,resp);
 

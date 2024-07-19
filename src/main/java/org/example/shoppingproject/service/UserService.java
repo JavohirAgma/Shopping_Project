@@ -39,4 +39,13 @@ public class UserService {
     public boolean becameSeller(Integer sellerId) {
         return userRepository.setRoleCeller(sellerId);
     }
+
+    public List<User> getAll(Integer id){
+        return userRepository.getAll(id);
+    }
+
+    public boolean setIsActive(Integer id, boolean active){
+        return userRepository.setIsActive(id,active);
+    }
+
 }

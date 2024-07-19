@@ -10,16 +10,33 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="634c8ec2-e0fd-4684-8552-6c024b986986" name="Changes" comment="*">
-      <change afterPath="$PROJECT_DIR$/src/main/java/org/example/shoppingproject/servlets/all/ForDeleteItemInBasket.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/org/example/shoppingproject/filters/AdminFilter.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/org/example/shoppingproject/servlets/admin/AdminSettingsServlet.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/org/example/shoppingproject/servlets/admin/ProductBlockSevrlet.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/org/example/shoppingproject/servlets/admin/StoreBlockSevrlet.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/org/example/shoppingproject/servlets/admin/UsersBlockSevrlet.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/admin/adminSettings.jsp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/admin/productBlock.jsp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/admin/storeBlock.jsp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/admin/userBlock.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/dataSources.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/shoppingproject/config/DbConnection.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/shoppingproject/config/DbConnection.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/shoppingproject/repository/BaseRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/shoppingproject/repository/BaseRepository.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/org/example/shoppingproject/repository/ProductRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/shoppingproject/repository/ProductRepository.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/shoppingproject/repository/SavatRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/shoppingproject/repository/SavatRepository.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/org/example/shoppingproject/repository/ShopRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/shoppingproject/repository/ShopRepository.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/shoppingproject/repository/UserRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/shoppingproject/repository/UserRepository.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/shoppingproject/service/ImageService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/shoppingproject/service/ImageService.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/org/example/shoppingproject/service/ProductService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/shoppingproject/service/ProductService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/shoppingproject/service/SavatService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/shoppingproject/service/SavatService.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/org/example/shoppingproject/service/ShopService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/shoppingproject/service/ShopService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/shoppingproject/servlets/all/AddSavatServlet.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/shoppingproject/servlets/all/AddSavatServlet.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/shoppingproject/servlets/all/ShowBasket.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/shoppingproject/servlets/all/ShowBasket.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/shoppingproject/service/UserService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/shoppingproject/service/UserService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/shoppingproject/servlets/all/MainServlet.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/shoppingproject/servlets/all/MainServlet.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/shoppingproject/utils/FileWriterUtil.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/shoppingproject/utils/FileWriterUtil.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/scheme.sql" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/scheme.sql" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/web.xml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/web.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/addSavat.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/addSavat.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/main.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/main.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/profile.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/profile.jsp" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/webapp/showBasket.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/showBasket.jsp" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -46,6 +63,18 @@
     </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
+  <component name="GitHubPullRequestSearchHistory">{
+  &quot;lastFilter&quot;: {
+    &quot;state&quot;: &quot;OPEN&quot;,
+    &quot;assignee&quot;: &quot;odina18032005&quot;
+  }
+}</component>
+  <component name="GithubPullRequestsUISettings">{
+  &quot;selectedUrlAndAccountId&quot;: {
+    &quot;url&quot;: &quot;https://github.com/JavohirAgma/Shopping_Project.git&quot;,
+    &quot;accountId&quot;: &quot;7e6e53c1-72ae-4880-9611-bfcc1f126f42&quot;
+  }
+}</component>
   <component name="LogFilters">
     <option name="FILTER_ERRORS" value="false" />
     <option name="FILTER_WARNINGS" value="false" />
@@ -71,36 +100,38 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
-    &quot;Tomcat Server.Tomcat 10.1.25.executor&quot;: &quot;Run&quot;,
-    &quot;git-widget-placeholder&quot;: &quot;master&quot;,
-    &quot;kotlin-language-version-configured&quot;: &quot;true&quot;,
-    &quot;last_opened_file_path&quot;: &quot;D:/7-modul/3-dars/MyFirstWebApp&quot;,
-    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
-    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
-    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
-    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
-    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
-    &quot;project.structure.last.edited&quot;: &quot;Modules&quot;,
-    &quot;project.structure.proportion&quot;: &quot;0.0&quot;,
-    &quot;project.structure.side.proportion&quot;: &quot;0.0&quot;,
-    &quot;settings.editor.selected.configurable&quot;: &quot;org.jetbrains.plugins.github.ui.GithubSettingsConfigurable&quot;,
-    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
+    "Tomcat Server.Tomcat 10.1.25.executor": "Run",
+    "git-widget-placeholder": "master",
+    "kotlin-language-version-configured": "true",
+    "last_opened_file_path": "E:/7 modul/ToDo",
+    "node.js.detected.package.eslint": "true",
+    "node.js.detected.package.tslint": "true",
+    "node.js.selected.package.eslint": "(autodetect)",
+    "node.js.selected.package.tslint": "(autodetect)",
+    "nodejs_package_manager_path": "npm",
+    "project.structure.last.edited": "Modules",
+    "project.structure.proportion": "0.0",
+    "project.structure.side.proportion": "0.0",
+    "settings.editor.selected.configurable": "org.jetbrains.plugins.github.ui.GithubSettingsConfigurable",
+    "vue.rearranger.settings.migration": "true"
   },
-  &quot;keyToStringList&quot;: {
-    &quot;DatabaseDriversLRU&quot;: [
-      &quot;postgresql&quot;
+  "keyToStringList": {
+    "DatabaseDriversLRU": [
+      "postgresql"
     ]
   }
-}</component>
+}]]></component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
       <recent name="$PROJECT_DIR$/src/main/resources/docs" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="E:\7 modul\Shopping\src\main\webapp\all" />
+      <recent name="E:\7 modul\Shopping\src\main\webapp\admin" />
       <recent name="$PROJECT_DIR$/src/main/webapp/seller" />
       <recent name="D:\7-modul\proyekt\ShoppingProject\src\main\webapp" />
     </key>
@@ -109,6 +140,7 @@
     <configuration name="Tomcat 10.1.25" type="#com.intellij.j2ee.web.tomcat.TomcatRunConfigurationFactory" factoryName="Local" APPLICATION_SERVER_NAME="Tomcat 10.1.25" ALTERNATIVE_JRE_ENABLED="false">
       <option name="OPEN_IN_BROWSER_URL" value="http://localhost:8080/main.jsp" />
       <option name="BROWSER_ID" value="98ca6316-2f89-46d9-a9e5-fa9e2b0625b3" />
+      <option name="UPDATE_ON_FRAME_DEACTIVATION" value="true" />
       <deployment>
         <artifact name="ShoppingProject:war exploded">
           <settings>
@@ -214,12 +246,15 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
+    <list>
+      <item itemvalue="Tomcat Server.Tomcat 10.1.25" />
+    </list>
   </component>
   <component name="SharedIndexes">
     <attachedChunks>
       <set>
-        <option value="bundled-jdk-9f38398b9061-39b83d9b5494-intellij.indexing.shared.core-IU-241.17011.79" />
-        <option value="bundled-js-predefined-1d06a55b98c1-0b3e54e931b4-JavaScript-IU-241.17011.79" />
+        <option value="bundled-jdk-9f38398b9061-39b83d9b5494-intellij.indexing.shared.core-IU-241.18034.62" />
+        <option value="bundled-js-predefined-1d06a55b98c1-0b3e54e931b4-JavaScript-IU-241.18034.62" />
       </set>
     </attachedChunks>
   </component>
@@ -291,9 +326,8 @@
       <workItem from="1721152725379" duration="332000" />
       <workItem from="1721191960621" duration="89000" />
       <workItem from="1721192098076" duration="788000" />
-      <workItem from="1721278646701" duration="18242000" />
-      <workItem from="1721328245885" duration="4754000" />
-      <workItem from="1721357932176" duration="3920000" />
+      <workItem from="1721278646701" duration="15701000" />
+      <workItem from="1721372081556" duration="23603000" />
     </task>
     <task id="LOCAL-00001" summary="birinchisi">
       <option name="closed" value="true" />
@@ -623,15 +657,7 @@
       <option name="project" value="LOCAL" />
       <updated>1721290996947</updated>
     </task>
-    <task id="LOCAL-00042" summary="*">
-      <option name="closed" value="true" />
-      <created>1721297217856</created>
-      <option name="number" value="00042" />
-      <option name="presentableId" value="LOCAL-00042" />
-      <option name="project" value="LOCAL" />
-      <updated>1721297217856</updated>
-    </task>
-    <option name="localTasksCounter" value="43" />
+    <option name="localTasksCounter" value="42" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">

@@ -15,12 +15,18 @@ public class ShopService {
         return shopRepository.save(store);
     }
     public Store getStore(Integer id) {
-        return null;
+        return shopRepository.get(id);
     }
     public List<Store> getStoresWithUserId(Integer id) {
         return shopRepository.getStoreByUserId(id);
     }
     public String findName(Integer id) {
         return shopRepository.findName(id);
+    }
+    public boolean isActive(Integer id , boolean active){
+        return shopRepository.setIsActive(id,active);
+    }
+    public List<Store> getAll(){
+        return shopRepository.getAll();
     }
 }

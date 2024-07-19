@@ -21,6 +21,7 @@
             margin: 0;
             padding: 0;
             box-sizing: border-box;
+            text-decoration: none;
         }
 
         header {
@@ -133,7 +134,7 @@
 </head>
 <%Integer id = (Integer) request.getSession().getAttribute("userId");
 ProductService productService = new ProductService();
-List<Product> products = productService.getAll();
+List<Product> products = productService.getAllIsActive();
 %>
 <body>
 <header>

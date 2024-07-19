@@ -1,5 +1,7 @@
 package org.example.shoppingproject.repository;
 
+import org.example.shoppingproject.model.User;
+
 import java.util.List;
 
 public interface BaseRepository<M>{

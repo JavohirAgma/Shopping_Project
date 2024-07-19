@@ -17,8 +17,8 @@ public class ProductService {
     public List<Product> getAllProducts(Integer storeId) {
         return productRepository.getAll(storeId);
     }
-    public  List<Product> getAll() {
-        return productRepository.getAll();
+    public  List<Product> getAllIsActive() {
+        return productRepository.getAllIsActive();
     }
     public Product getProductById(Integer id) {
         return productRepository.getProductById(id);
@@ -31,5 +31,11 @@ public class ProductService {
     }
     public String findNameById(Integer id) {
         return productRepository.findName(id);
+    }
+    public boolean isOpen(Integer id, boolean open){
+        return productRepository.setIsOpen(id,open);
+    }
+    public List<Product> getAll(){
+        return productRepository.getAll();
     }
 }

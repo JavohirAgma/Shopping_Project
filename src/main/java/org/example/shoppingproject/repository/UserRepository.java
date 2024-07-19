@@ -77,7 +77,49 @@ public class UserRepository implements BaseRepository<User>{
 
     @Override
     public List<User> getAll() {
-        return null;
+        return List.of();
+    }
+
+
+    public List<User> getAll(Integer id) {
+        List<User> users = new ArrayList<>();
+        try (
+                Connection connection = DbConnection.getConnection();
+                Statement statement = connection.createStatement();
+        ){
+            String query = "select * from users where id!=%s"
+                    .formatted(id);
+            ResultSet rs = statement.executeQuery(query);
+            while (rs.next()){
+                int id1 = rs.getInt("id");
+                String name = rs.getString("name");
+                String email = rs.getString("gmail");
+                String username = rs.getString("username");
+                String password = rs.getString("password");
+                String phoneNumber = rs.getString("phone_number");
+                Boolean isActive = rs.getBoolean("is_active");
+                List<Integer> role = getRole(id1);
+                List<UserRole> role2= new ArrayList<>();
+                for (Integer i : role) {
+                    UserRole category = UserRole.getCategoryByOrdinal(i);
+                    role2.add(category);
+                }
+                User build = User.builder()
+                        .id(id1)
+                        .name(name)
+                        .password(password)
+                        .isActive(isActive)
+                        .phone(phoneNumber)
+                        .email(email)
+                        .userName(username)
+                        .role(role2)
+                        .build();
+                users.add(build);
+            }
+            return users;
+        } catch (SQLException e) {
+            throw new RuntimeException(e);
+        }
     }
 
     @Override
@@ -200,5 +242,16 @@ public class UserRepository implements BaseRepository<User>{
         }
     }
 
-
+    public boolean setIsActive(Integer id, boolean active){
+        try (
+                Connection connection = DbConnection.getConnection();
+                Statement statement = connection.createStatement();
+        ){
+            String query = "update users set is_active = %s where id = %s".formatted(active,id);
+            statement.execute(query);
+            return true;
+        } catch (SQLException e) {
+            throw new RuntimeException(e);
+        }
+    }
 }
