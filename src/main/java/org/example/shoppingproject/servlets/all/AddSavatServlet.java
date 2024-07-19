@@ -11,7 +11,6 @@ import org.example.shoppingproject.model.Product;
 import org.example.shoppingproject.service.ProductService;
 import org.example.shoppingproject.service.SavatService;
 
-import javax.management.remote.NotificationResult;
 import java.io.IOException;
 
 @WebServlet(name = "addSavat",value = "/addSavat")
@@ -54,7 +53,7 @@ public class AddSavatServlet extends HttpServlet {
                 .productSum(price)
                 .build();
         savatService.save(build);
-        productService.updateCount(id,count);
+        productService.updateCountDec(id,count);
         resp.sendRedirect("/main.jsp");
     }
 }

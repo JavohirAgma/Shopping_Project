@@ -3,7 +3,6 @@ package org.example.shoppingproject.repository;
 import org.example.shoppingproject.config.DbConnection;
 import org.example.shoppingproject.enums.Category;
 import org.example.shoppingproject.model.Product;
-import org.example.shoppingproject.model.Store;
 
 import java.sql.Connection;
 import java.sql.ResultSet;
@@ -156,7 +155,7 @@ public class ProductRepository implements BaseRepository<Product>{
             throw new RuntimeException(e);
         }
     }
-    public boolean updateCount(Integer productId, Integer count) {
+    public boolean updateCountDec(Integer productId, Integer count) {
         try (
                 Connection connection = DbConnection.getConnection();
                 Statement statement = connection.createStatement();
@@ -165,6 +164,37 @@ public class ProductRepository implements BaseRepository<Product>{
                     .formatted(count,productId);
             int i = statement.executeUpdate(query);
             return true;
+        } catch (SQLException e) {
+            throw new RuntimeException(e);
+        }
+    }
+    public boolean updateCountInc(Integer productId, Integer count) {
+        try (
+                Connection connection = DbConnection.getConnection();
+                Statement statement = connection.createStatement();
+        ){
+            String query = "update products set count = count + %s where id = %s"
+                    .formatted(count,productId);
+            int i = statement.executeUpdate(query);
+            return true;
+        } catch (SQLException e) {
+            throw new RuntimeException(e);
+        }
+    }
+    public String findName(Integer id) {
+        try (
+                Connection connection = DbConnection.getConnection();
+                Statement statement = connection.createStatement();
+        ){
+
+            String query = "select name from products where id = %s"
+                    .formatted(id);
+            ResultSet rs = statement.executeQuery(query);
+            while (rs.next()){
+                String name = rs.getString("name");
+                return name;
+            }
+            return null;
         } catch (SQLException e) {
             throw new RuntimeException(e);
         }

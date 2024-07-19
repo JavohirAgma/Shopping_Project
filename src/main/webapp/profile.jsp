@@ -178,7 +178,7 @@
             </li>
         </ul>
         <form action="/showBasket" method="get">
-            <button class="become-seller-btn" type="submit">Sea <B></B>asket</button>
+            <button class="become-seller-btn" type="submit">Sea Basket</button>
         </form>
         <%if (size==1){%>
         <form action="/becomeSeller" method="post">

@@ -20,4 +20,7 @@ public class ShopService {
     public List<Store> getStoresWithUserId(Integer id) {
         return shopRepository.getStoreByUserId(id);
     }
+    public String findName(Integer id) {
+        return shopRepository.findName(id);
+    }
 }
