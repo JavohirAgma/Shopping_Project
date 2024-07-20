@@ -137,6 +137,7 @@
     ShopService shopService= new ShopService();
     int size = role.size();
     List<Store> storesWithUserId = shopService.getStoresWithUserId(id);
+    Boolean checkAdmin = false;
 %>
 <div class="sidebar">
     <ul>
@@ -144,10 +145,15 @@
         <li><a href="#">Categories</a></li>
         <li><a href="/settings">Settings</a></li>
         <li><a href="/logOut">LogOut</a></li>
-<%--        <%if (size>=3){%>--%>
+        <%for (UserRole userRole : role) {
+              if(userRole.equals(UserRole.ADMIN)){
+                  checkAdmin=true;
+              }
+            }%>
+        <%if (checkAdmin==true){%>
         <li><a href="admin/adminSettings.jsp">Settings For Admin</a></li>
-<%--        <%}%>--%>
-        <%if (size>=2){%>
+        <%}%>
+        <%if (size>=2 && checkAdmin==true){%>
         <li><a href="/createShop">Create shop</a></li>
         <%}%>
         <%if (size>=2&&storesWithUserId.size()>0 ){%>
@@ -180,10 +186,12 @@
                 <%}%>
             </li>
         </ul>
+        <%if (checkAdmin==false){%>
         <form action="/showBasket" method="get">
             <button class="become-seller-btn" type="submit">Sea Basket</button>
         </form>
-        <%if (size!=2){%>
+        <%}%>
+        <%if (size==1 && checkAdmin==false){%>
         <form action="/becomeSeller" method="post">
             <button class="become-seller-btn" type="submit">Become a Seller</button>
         </form>
