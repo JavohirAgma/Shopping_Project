@@ -151,10 +151,10 @@
         <%if (checkAdmin==true){%>
         <li><a href="admin/adminSettings.jsp">Settings For Admin</a></li>
         <%}%>
-        <%if (size>=2 || checkAdmin==true){%>
+        <%if (size==2 || checkAdmin==false){%>
         <li><a href="/createShop">Create shop</a></li>
         <%}%>
-        <%if (size>=2 || storesWithUserId.size()>0 ){%>
+        <%if (size==2 || storesWithUserId.size()>0 ){%>
         <li><a href="/showProduct">Show product</a></li>
         <%}%>
     </ul>

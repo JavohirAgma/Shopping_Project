@@ -159,7 +159,7 @@ public class ProductRepository implements BaseRepository<Product>{
                 Connection connection = DbConnection.getConnection();
                 Statement statement = connection.createStatement();
         ){
-            String query = "select * from products where id = %s limit 1"
+            String query = "select * from products where id = %s  limit 1"
                     .formatted(id);
             ResultSet rs = statement.executeQuery(query);
             while (rs.next()){

@@ -55,6 +55,7 @@
             <li><a href="/userBlock">User block</a></li>
             <li><a href="/productBlock">Product block</a></li>
             <li><a href="/storeBlock">Store block</a></li>
+            <li><a href="/profile.jsp">Profile</a></li>
         </ul>
 </div>
 <h1>WELCOME ADMIN</h1>

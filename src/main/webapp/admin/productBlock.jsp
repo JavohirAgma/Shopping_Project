@@ -69,7 +69,6 @@
 <body>
 <%
     ProductService productService =new ProductService();
-    UserService userService = new UserService();
     ShopService shopService = new ShopService();
 %>
 <div class="container">
@@ -88,12 +87,16 @@
         <tr>
             <td><%=product.getId()%></td>
             <td><%=product.getName()%></td>
-            <td><%=shopService.getStore(product.getStoreId())%>></td>
-            <%if (product.isOpen()){%>
-            <td><a href="/productBlock?productId=<%=product.getStoreId()%>">Active</a></td>
-            <%} else {%>
-            <td><a href="/productBlock?productId=<%=product.getStoreId()%>">Not Active</a></td>
-            <%}%>
+            <td><%=shopService.getStore(product.getStoreId()).getName()%>></td>
+            <form action="/productBlock" method="post">
+                <%if (product.isOpen()){%>
+                <input type="hidden" id="productId" name="productId" value="<%=product.getId()%>" required>
+                <td><button>Active (Now)</button></td>
+                <%} else {%>
+                <input type="hidden" id="productId" name="productId" value="<%=product.getId()%>" required>
+                <td><button>Not active (Now)</button></td>
+                <%}%>
+            </form>
         </tr>
         <%}%>
         </tbody>

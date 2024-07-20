@@ -15,22 +15,31 @@ import java.io.IOException;
 @WebServlet(name = "productBlock", value = "/productBlock")
 public class ProductBlockSevrlet extends HttpServlet {
     ProductService productService = new ProductService();
+    ShopService shopService = new ShopService();
     @Override
     protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-        req.getRequestDispatcher("admin/productBlock.jsp").forward(req,resp);
+        String productId = req.getParameter("productId");
+        if (productId!=null){
+            Product product = productService.getProductById(Integer.valueOf(productId));
+            Integer storeId = product.getStoreId();
+            Store store = shopService.getStore(storeId);
+            if (store.isOpen()){
+                if (product.isOpen()){
+                    productService.isOpen(product.getId(),false);
+                } else {
+                    productService.isOpen(product.getId(),true);
+                }
+            }else {
+                req.setAttribute("storeName",store.getName());
+                req.getRequestDispatcher("admin/noticeForAdmin.jsp").forward(req, resp);
+            }
+        }
+        resp.sendRedirect("admin/productBlock.jsp");
     }
 
     @Override
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-        String productId = req.getParameter("productId");
-        if (productId!=null){
-            Product product = productService.getProductById(Integer.valueOf(productId));
-            if (product.isOpen()){
-                productService.isOpen(product.getId(),false);
-            } else {
-                productService.isOpen(product.getId(),true);
-            }
-        }
-        resp.sendRedirect("admin/productBlock.jsp");
+        req.getRequestDispatcher("admin/productBlock.jsp").forward(req,resp);
+
     }
 }

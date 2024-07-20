@@ -39,7 +39,7 @@ public class ShopRepository implements BaseRepository<Store>{
                 Statement statement = connection.createStatement();
         ){
 
-            String query = "select * from stores where id = %s"
+            String query = "select * from stores where id = %s "
                     .formatted(id);
             ResultSet rs = statement.executeQuery(query);
             while (rs.next()) {
@@ -100,8 +100,8 @@ public class ShopRepository implements BaseRepository<Store>{
                 Connection connection = DbConnection.getConnection();
                 Statement statement = connection.createStatement();
         ){
-            String query = "select * from stores where ownerId = %s"
-                    .formatted(id);
+            String query = "select * from stores where ownerId = %s and isOpen = %s"
+                    .formatted(id,true);
             ResultSet rs = statement.executeQuery(query);
             while (rs.next()){
                 int id1 = rs.getInt("id");

@@ -19,7 +19,7 @@ public class UserRepository implements BaseRepository<User>{
                 Statement statement = connection.createStatement();
         ){
             String query = "insert into users(name,gmail,password,username,phone_number,is_active) values('%s','%s','%s','%s','%s',%s) returning id;"
-                    .formatted(user.getName(),user.getEmail(),user.getPassword(),user.getUserName(),user.getPhone(),user.getIsActive());
+                    .formatted(user.getName(),user.getEmail(),user.getPassword(),user.getUserName(),user.getPhone(),true);
             ResultSet rs = statement.executeQuery(query);
             while (rs.next()){
                 int id = rs.getInt("id");
@@ -132,8 +132,8 @@ public class UserRepository implements BaseRepository<User>{
                 Connection connection = DbConnection.getConnection();
                 Statement statement = connection.createStatement();
         ){
-            String query = "select * from users where username = '%s' and password = '%s' limit 1"
-                    .formatted(username,password);
+            String query = "select * from users where username = '%s' and password = '%s' and is_active=%s  limit 1"
+                    .formatted(username,password,true);
             ResultSet rs = statement.executeQuery(query);
 
             while (rs.next()){

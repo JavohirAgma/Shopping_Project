@@ -1,6 +1,10 @@
 <%@ page import="org.example.shoppingproject.service.ProductService" %>
 <%@ page import="org.example.shoppingproject.model.Product" %>
 <%@ page import="org.example.shoppingproject.service.ImageService" %>
+<%@ page import="org.example.shoppingproject.service.UserService" %>
+<%@ page import="org.example.shoppingproject.model.User" %>
+<%@ page import="org.example.shoppingproject.enums.UserRole" %>
+<%@ page import="java.util.List" %>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -120,9 +124,18 @@
     Product product = productService.getProductById(productId);
     ImageService imageService= new ImageService();
     String writer = imageService.getWriter(product);
+    UserService userService= new UserService();
+    User user = userService.get(id);
+    List<UserRole> role = user.getRole();
+    Boolean checkAdmin = false;
 %>
 <body>
 <header>
+    <%for (UserRole userRole : role) {
+        if(userRole.equals(UserRole.ADMIN)){
+            checkAdmin=true;
+        }
+    }%>
     <div class="logo">ShopLogo</div>
     <div class="search-container">
         <input type="text" class="search-input" placeholder="Search products">
@@ -163,7 +176,9 @@
         <input type="hidden" id="count" name="count" value="<%=product.getCount()%>" >
         <input type="hidden" id="storeId" name="storeId" value="<%=product.getStoreId()%>" >
 
+        <%if (checkAdmin==false){%>
         <button class="add-to-cart">Add savat</button>
+        <%}%>
     </form>
 </div>
 </div>

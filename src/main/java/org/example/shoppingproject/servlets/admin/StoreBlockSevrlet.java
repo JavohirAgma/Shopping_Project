@@ -30,14 +30,14 @@ public class StoreBlockSevrlet extends HttpServlet {
             Store store = shopService.getStore(Integer.valueOf(storeId));
             if (store.isOpen()){
                 shopService.isActive(store.getId(), false);
-                for (Product product : productService.getAllIsActive()) {
+                for (Product product : productService.getAll()) {
                     if (product!=null && product.getStoreId().equals(store.getId())){
                         productService.isOpen(product.getId(),false);
                     }
                 }
             } else {
                 shopService.isActive(store.getId(),true);
-                for (Product product : productService.getAllIsActive()) {
+                for (Product product : productService.getAll()) {
                     if (product!=null && product.getStoreId().equals(store.getId())){
                         productService.isOpen(product.getId(),true);
                     }
