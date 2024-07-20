@@ -2,13 +2,6 @@
 <%@ page import="org.example.shoppingproject.model.Product" %>
 <%@ page import="org.example.shoppingproject.service.ProductService" %>
 <%@ page import="org.example.shoppingproject.service.ImageService" %>
-<%@ page import="org.example.shoppingproject.utils.FileWriterUtil" %>
-<%@ page import="org.example.shoppingproject.model.Image" %>
-<%@ page import="java.nio.file.Path" %>
-<%@ page import="java.io.File" %>
-<%@ page import="java.nio.file.Files" %>
-<%@ page import="java.util.Base64" %>
-<%@ page import="java.io.BufferedWriter" %>
 <!DOCTYPE html>
 <html lang="en">
 <head>

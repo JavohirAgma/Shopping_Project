@@ -8,7 +8,7 @@ import jakarta.servlet.http.HttpSession;
 import java.io.IOException;
 
 
-@WebFilter(filterName = "LoginFilter",urlPatterns = {"/profile","/createShop","/becomeSeller","/seller/*","/addSavat"})
+@WebFilter(filterName = "LoginFilter",urlPatterns = {"/profile","/createShop","/becomeSeller","/seller/*","/addSavat","/showBasket"})
 public class LoginFilter implements Filter {
     @Override
     public void doFilter(ServletRequest request, ServletResponse response, FilterChain filterChain) throws IOException, ServletException {

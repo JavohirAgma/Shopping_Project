@@ -142,21 +142,19 @@
 <div class="sidebar">
     <ul>
         <li><a href="/main.jsp">Home</a></li>
-        <li><a href="#">Categories</a></li>
-        <li><a href="/settings">Settings</a></li>
         <li><a href="/logOut">LogOut</a></li>
         <%for (UserRole userRole : role) {
-              if(userRole.equals(UserRole.ADMIN)){
-                  checkAdmin=true;
-              }
-            }%>
+            if(userRole.equals(UserRole.ADMIN)){
+                checkAdmin=true;
+            }
+        }%>
         <%if (checkAdmin==true){%>
         <li><a href="admin/adminSettings.jsp">Settings For Admin</a></li>
         <%}%>
-        <%if (size>=2 && checkAdmin==true){%>
+        <%if (size>=2 || checkAdmin==true){%>
         <li><a href="/createShop">Create shop</a></li>
         <%}%>
-        <%if (size>=2&&storesWithUserId.size()>0 ){%>
+        <%if (size>=2 || storesWithUserId.size()>0 ){%>
         <li><a href="/showProduct">Show product</a></li>
         <%}%>
     </ul>
@@ -177,7 +175,7 @@
             </li>
             <li>
                 <span>Status: </span>
-                 <%for (int i=0;i<role.size();i++) {%>
+                <%for (int i=0;i<role.size();i++) {%>
                 <% if (i+1==role.size()){%>
                 <%=role.get(i).toString()%>
                 <%} else{%>

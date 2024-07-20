@@ -156,10 +156,8 @@
 
 <section class="about">
     <h2>About Us</h2>
-    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla convallis libero et purus tincidunt condimentum. Quisque gravida felis at turpis fermentum, sed facilisis velit hendrerit. Nullam eget nulla in leo dignissim ultricies. Phasellus feugiat arcu at felis hendrerit, nec volutpat ligula condimentum. Suspendisse rutrum mauris sit amet pulvinar pellentesque. Fusce scelerisque ipsum id dapibus vehicula. In hac habitasse platea dictumst.</p>
-    <p>Vestibulum tincidunt magna a sem vulputate, vitae rutrum tortor sagittis. Nullam eget lacus sit amet quam pharetra ultrices. Proin tincidunt consectetur risus, ac elementum justo faucibus nec. Fusce nec purus mauris. Duis et tellus eget ligula varius iaculis. Integer nec lectus dolor. Mauris quis sollicitudin nisi.</p>
+    <p>Kirib Ovora bomeng Baribir hech nima yoq</p>
 </section>
-
 <footer>
     <p>&copy; 2024 ShopLogo. All rights reserved.</p>
 </footer>

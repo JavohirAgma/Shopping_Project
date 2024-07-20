@@ -27,7 +27,6 @@ public class SellerFilter implements Filter {
             res.sendRedirect("/main.jsp");
             return;
         }
-
         List<UserRole> role = user.getRole();
         if (role.size()==2){
             filterChain.doFilter(servletRequest,servletResponse);

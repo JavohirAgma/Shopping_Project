@@ -1,6 +1,7 @@
 package org.example.shoppingproject.filters;
 
 import jakarta.servlet.*;
+import jakarta.servlet.annotation.WebFilter;
 import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
 import jakarta.servlet.http.HttpSession;
@@ -11,6 +12,8 @@ import org.example.shoppingproject.service.UserService;
 import java.io.IOException;
 import java.util.List;
 
+
+@WebFilter(filterName = "AdminFilter" , urlPatterns = {"/admin/*"})
 public class AdminFilter implements Filter {
     @Override
     public void doFilter(ServletRequest servletRequest, ServletResponse servletResponse, FilterChain filterChain) throws IOException, ServletException {
@@ -22,13 +25,19 @@ public class AdminFilter implements Filter {
         User user = userService.get(userId);
         if(user==null) {
             res.sendRedirect("/main.jsp");
-            return;
-        }
-        List<UserRole> role = user.getRole();
-        if (role.size()==3){
-            filterChain.doFilter(servletRequest,servletResponse);
-        }else {
-            res.sendError(403, "Not authorized");
+        }else{
+            boolean checkAdmin =false;
+            List<UserRole> role = user.getRole();
+            for (UserRole userRole : role) {
+                if(userRole.equals(UserRole.ADMIN)){
+                    checkAdmin=true;
+                }
+            }
+            if(!checkAdmin){
+                res.sendRedirect("/main.jsp");
+            }else{
+                filterChain.doFilter(servletRequest, servletResponse);
+            }
         }
 
 
